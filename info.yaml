@@ -3,7 +3,7 @@ project:
   title:        "CAS Project Sensor ASIC"      # Project title
   author:       "Marco Lauffer"      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  ""      # One line description of what your project does
+  description:  "CAS Sensorik Temperature sensor with a PTAT source and a SAR ADC"      # One line description of what your project does
   language:     "Analog" # other examples include Verilog, Amaranth, VHDL, etc
   clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
 
