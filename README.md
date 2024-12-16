@@ -1,6 +1,6 @@
 ![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg)
 
-# Tiny Tapeout Analog Project Template
+# Tiny Tapeout Analog Project
 
 - [Read the documentation for project](docs/info.md)
 
@@ -25,11 +25,42 @@ For specifications and instructions, see the [analog specs page](https://tinytap
 - [Learn how semiconductors work](https://tinytapeout.com/siliwiz/)
 - [Join the community](https://tinytapeout.com/discord)
 
-## What next?
+## Structure of the Project
 
-- [Submit your design to the next shuttle](https://app.tinytapeout.com/).
-- Edit [this README](README.md) and explain your design, how it works, and how to test it.
-- Share your project on your social network of choice:
-  - LinkedIn [#tinytapeout](https://www.linkedin.com/search/results/content/?keywords=%23tinytapeout) [@TinyTapeout](https://www.linkedin.com/company/100708654/)
-  - Mastodon [#tinytapeout](https://chaos.social/tags/tinytapeout) [@matthewvenn](https://chaos.social/@matthewvenn)
-  - X (formerly Twitter) [#tinytapeout](https://twitter.com/hashtag/tinytapeout) [@matthewvenn](https://twitter.com/matthewvenn)
+The project has the following folder structure:
+
+```plaintext
+.
+├── docs --> desc & guides
+├── gds
+├── lef
+├── mag --> Layout files with a Makefile
+│   ├── gds
+│   └── lef
+├── src
+├── test
+└── xschem 
+    └── simulation --> spice netlists
+```
+
+- **docs**  
+  Contains project descriptions, cheat sheets, and guides.
+
+- **gds**  
+  Contains GDSII (Graphic Data System II) files, which are binary files used to describe the layout of an integrated circuit. These files are the standard format for IC design. (created by Makefile in the `mag` folder)
+
+- **lef**  
+  Contains LEF (Library Exchange Format) files, which describe the physical design rules and abstract layouts of standard cells or macros in an integrated circuit. (created by Makefile in the `mag` folder)
+
+- **mag**  
+  Includes all layout files, typically in Magic format, used for IC layout design.
+
+- **src**  
+  Contains Verilog files that describe the hardware design.
+
+- **test**  
+  Contains Verilog testbench files for simulating and verifying the hardware design.
+
+- **xschem**  
+  Contains schematic designs of the project created using the Xschem tool.
+
