@@ -13,7 +13,7 @@ Desctription of the Project
 
 ## How to test
 
-Explain how to use your project
+Desc of the Test
 
 ## External hardware
 
