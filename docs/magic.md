@@ -7,6 +7,7 @@ To start MAGIC with the PDK, use the following command:
 ```bash
 magic -rcfile $(PDK_ROOT)/sky130A/libs.tech/magic/sky130A.magicrc $(NAME).mag
 ```
+For the Projectwork, use the `Makefile`. See [Makefile Overview](##Makefile Overview)
 
 **Explanation of the Command**
 
