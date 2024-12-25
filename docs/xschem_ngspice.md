@@ -22,6 +22,23 @@ ngspice is a open-source SPICE simulator. Below are frequently used terminal com
 
 For a guide to ngspice commands, refer to the [ngspice Control Language Tutorial](https://ngspice.sourceforge.io/ngspice-control-language-tutorial.html).
 
+From the Tutorial:
+
+**plots, variables and vectors**
+
+The output data of any simulation is available as vectors. An operating point simulation will create vectors of length 1, dc simulation will create vectors with length determined by the number of points during sweeping. These vectors are stored in plots, a traditional SPICE notion (see also chapter 13.3 of the manual). 'Plot' here is not to be confused with a plot resulting from plotting data. So a plot is a group of vectors. In our example the first dc command will generate several vectors within a plot dc1. A subsequent dc command will store their vectors in plot dc2 and so on. Transient simulation vectors would have been stored in plots tran1, tran2, etc. So each simulation command (dc, op, tran, sp ...) creates a new plot. The lastly created plot will stay active, until another plot is created or selected. There are also some functions creating their own plots, e.g. fft or linearize. The command setplot will show all plots and mark the active plot. For our example we have this
+
+```plaintext
+List of plots available:
+
+Current dc5	inverter example circuit for control language tutorial (DC transfer characteristic)
+	dc4	inverter example circuit for control language tutorial (DC transfer characteristic)
+	dc3	inverter example circuit for control language tutorial (DC transfer characteristic)
+	dc2	inverter example circuit for control language tutorial (DC transfer characteristic)
+	dc1	inverter example circuit for control language tutorial (DC transfer characteristic)
+	const	Constant values (constants)
+```
+
 ## xschem Schematic Tool Commands
 
 xschem is a graphical tool for schematic capture. Below are useful commands for manipulating schematics and symbols.
@@ -48,6 +65,7 @@ xschem is a graphical tool for schematic capture. Below are useful commands for 
 | Command              | Description                                                        |
 | -------------------- | ------------------------------------------------------------------ |
 | `sig:xx`             | Plots signal `xx` and labels it as `sig`.                          |
+| `"name;xx  i(yy) /"` | Names the Signal `name` and `xx` divides by the current `yy`       |
 
 ## Example Workflow (xschem + ngspice)
 
