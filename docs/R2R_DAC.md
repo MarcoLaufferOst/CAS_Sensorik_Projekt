@@ -5,7 +5,10 @@ Nachfolgend ist eine schematische Darstellung des DACs zu sehen:
 
 ![DAC_Schem](./img/R2R_DAC_Schem.png)  
 
-Der DAC soll im SKY130-Prozess gefertigt werden. Die Widerstände sind in der Readthedocs-Dokumentation des PDK spezifiziert. Siehe [readthedocs](https://skywater-pdk.readthedocs.io/en/main/rules/device-details.html#generic-resistors).  
+Der DAC soll im SKY130-Prozess gefertigt werden. Die Widerstände und FETs sind in der Readthedocs-Dokumentation des PDK spezifiziert. Siehe [readthedocs](https://skywater-pdk.readthedocs.io/en/main/rules/device-details.html#generic-resistors).  
+
+
+## Dimensionierung der Widerstände
 
 Die `Generic resistors` werden nicht für analoge Designs empfohlen. Der `P-poly precision resistor` unterscheidet sich vom `P-poly resistor` durch ein separates Implantat, sodass der spezifische Flächenwiderstand bei 2000 Ohm/sq liegt (siehe readthedocs).  
 
@@ -83,6 +86,15 @@ Für einen 8-Bit-DAC werden 26 Widerstände benötigt.
 
 ![magic_pcell_no_snake](./img/high_poli_res_28.png)  
 
+Der maximale Strom, der durch den Widerstand fliesst, könnte analytisch berechnet werden. Dabei müssen jedoch einige Schleifen und Formeln aufgestellt werden. Eine einfache und sichere Alternative ist die Simulation mit SPICE. Ist der Umgang mit dem Simulator vertraut, kann diese Simulation schnell durchgeführt werden. Es wurde entschieden, dies in LTspice durchzuführen:
+
+![magic_pcell_no_snake](./img/R2R_LTspice_current.png) 
+
+Der R2R-DAC wird mit entsprechenden Widerständen aufgebaut. Mit D-Flip-Flops (DFF) wird ein Zähler konstruiert, der alle DAC-Werte erstellt. Die Ausgangsspannung beträgt dabei 1 V. Mit einer B-Source wird das jeweilige Bit (DFF-Ausgang: 1 V oder 0 V) auf 2 V ($V_{REF}$) verstärkt.
+
+Bei einem Einheitswiderstand von 10 kΩ wird ein Strom von $\pm 75 \mu A$ erwartet.
+
+
 ### Test der Mismatch-Simulation  
 
 Der Mismatch bestimmt die DNL und INL des DACs. Die Toleranz von Wafer zu Wafer ist vernachlässigbar, da mit reinen Verhältnissen gearbeitet wird. 2R muss einfach doppelt so gross wie R sein.  
@@ -117,3 +129,71 @@ Auch hier ist keine Variation zwischen den Läufen erkennbar. Alle 100 Läufe li
 Durch den `reset`-Befehl im Loop sind Änderungen bei jedem Durchlauf sichtbar:  
 
 ![res_op_mm_mc](./img/res_op_mm_mc_100_runs.png)  
+
+
+Etwas unklar bleibt der Parametersatz `mc` und `tt_mm`. Im Slack-Kanal **open-source-silicon.dev** sind die Maintainer von `xschem` und des PDK aktiv. Dabei wurde auch auf die Corners eingegangen.  
+
+Nach dem Chatverlauf sollte der Parameter `mc_mm` zur Verfügung stehen. Dieser ist jedoch nicht im PDK enthalten.  
+![slack_mm_mc](./img/slack_mm_mc.png)  
+
+Wird jedoch `tt_mm` gewählt, können die importierten Spice-Files in der Netzliste eingesehen werden. Es wird angenommen, dass der Mismatch die Änderung des Widerstandswerts von einem zum anderen Widerstand auf demselben Wafer beschreibt. Dies ist relevant.  
+Wenn der gesamte Wafer um 10 % höhere Widerstandswerte aufweist, ist dies beim R2R irrelevant, solange die Lastimpedanz und das $R_{DS_{on}}$ des Schalters sehr klein sind.  
+
+Für diese Simulationen wird der Corner `tt_mm` gewählt.  
+
+```plaintext
+.param mc_mm_switch=1
+.param mc_pr_switch=0
+.include /home/ttuser/pdk/sky130A/libs.tech/ngspice/corners/tt.spice
+.include /home/ttuser/pdk/sky130A/libs.tech/ngspice/r+c/res_typical__cap_typical.spice
+.include /home/ttuser/pdk/sky130A/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice
+.include /home/ttuser/pdk/sky130A/libs.tech/ngspice/corners/tt/spespecialized_cells.spice
+```
+
+## Dimensionierung der FET
+
+Für jedes Bit muss zwischen $V_{Ref}$ und $V_{COM}$ umgeschaltet werden. Dies kann mit einem Inverter (PFET - NFET) wie im folgenden Schema realisiert werden:  
+
+![DAC_FET_Switch](./img/R2R_DAC_Switch.png)  
+
+Folgende Trade-offs müssen beachtet werden:  
+
+- Der Widerstand $R_{DS_{on}}$ muss deutlich kleiner sein als $R$, damit der Fehler möglichst gering bleibt.  
+- Die Ansteuerung erfolgt durch den digitalen Teil. Entsprechend liegt die Spannung $D_x$ bei $V_{D_{PWR}} = 1.8\,$V.  
+- Der Querstrom sollte überprüft und optimiert werden (dies ist jedoch weniger kritisch als bei einem CAP-DAC, da keine Ladung verloren geht). Dies kann durch die Dimensionierung oder durch den digitalen Teil mittels `Break-Before-Make` erreicht werden.  
+
+Die FETs werden als Schalter dimensioniert.  
+
+Bei kleinen Drain-Source-Spannungen $V_{DS}$ kann der Drain-Source-Strom $I_D$ mit folgender Gleichung beschrieben werden [1, Eq. (1.51)]:  
+
+$$
+I_D = \mu_n Q_n \frac{W}{L} V_{DS}\tag{1.51}
+$$  
+
+- \( \mu_n \): Beweglichkeit der Elektronen in der Nähe der Siliziumoberfläche  
+- \( Q_n \): Ladungskonzentration des Kanals pro Flächeneinheit    
+- \( W \): Breite des MOSFET-Kanals    
+- \( L \): Länge des Kanals    
+- \( V_{DS} \): Drain-Source-Spannung    
+
+Die folgende Abbildung stammt aus [1]:  
+
+![FET_as_Switch](./img/fet_as_switch_id_vs_vds.png)  
+
+Herr Carsten Wulff zeigt jedoch in seiner [Präsentation](https://analogicus.com/aic2024/2024/09/11/SPICE.html) und seinem [YouTube-Video](https://youtu.be/z9go-m0hnIg?si=Wjbk-50xM0hINQm7&t=849), dass diese Formeln bei kleinen Strukturen nicht mehr gültig sind. Die Zusammenhänge sind komplex. Beispielsweise besitzt das `BSIM 4.5` (Berkeley Short-channel IGFET Model) SPICE-Modell 284 Parameter.  
+
+Seine Empfehlung: Für Analogdesign sollte ein Transistor mit `unit size` verwendet werden, und $L_{min}$ sollte aufgrund der verwendeten `Halo Doping`-Technologie bei minimalen Strukturen um ca. den Faktor 1.2 vergrössert werden. Der FET sollte mit einer SPICE-Simulation charakterisiert werden.  
+
+Formel (1.51) kann jedoch für eine heuristische Abschätzung verwendet werden. Je grösser $W$ und je kleiner $L$, desto grösser ist $I_D$. Die Schaltaufgabe ist nicht besonders kritisch.  
+
+Im PDK sind bestimmte $W/L$-Verhältnisse bereits charakterisiert (siehe [read-the-docs](https://skywater-pdk.readthedocs.io/en/main/rules/device-details.html#v-10-5v-nmos-fet)). Es wird der `IDSNS50H` ausgewählt ($W/L = 7/0.5$) und in einer Testbench charakterisiert. Dies ergibt einen Widerstand von etwa 600 $\Omega$:  
+
+![FET_as_Switch_tb](./img/mos_spec_sw_mm.png)  
+
+Die gleiche Simulation wurde mit dem PFET durchgeführt. Damit sich auch hier ein Widerstand von etwa 800 $\Omega$ ergibt, muss ein $W$ von $16\,\mu m$ gewählt werden:  
+
+![FET_as_Switch_tb](./img/mos_spec_sw_mm_pfet.png)  
+
+### Referenzen  
+
+[1] Carusone, T. C., Johns, D., Martin, K. (2012). *Analog Integrated Circuit Design*. Vereinigtes Königreich: Wiley.  
