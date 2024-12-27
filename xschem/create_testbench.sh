@@ -7,7 +7,7 @@ if [[ $# -ne 1 ]]; then
 fi
 
 if [ -z "$TT_PROJECT_NAME" ]; then
-    echo "env variable PROJECT_NAME is not set use `export PROJECT_NAME=xxx`"
+    echo "env variable PROJECT_NAME is not set use export PROJECT_NAME=xxx"
     exit 1
 fi
 
