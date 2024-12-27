@@ -151,7 +151,7 @@ Für jedes Bit muss zwischen $V_{Ref}$ und $V_{COM}$ umgeschaltet werden. Dies k
 Folgende Trade-offs müssen beachtet werden:  
 
 - Der Widerstand $R_{DS_{on}}$ muss deutlich kleiner sein als $R$, damit der Fehler möglichst gering bleibt.  
-- Die Ansteuerung erfolgt durch den digitalen Teil. Entsprechend liegt die Spannung $D_x$ bei $V_{D_{PWR}} = 1.8\,$V.  
+- Die Ansteuerung erfolgt durch den digitalen Teil. Entsprechend liegt die Spannung $D_x$ bei $V_{D_{PWR}} = 1.8V$.  
 - Der Querstrom sollte überprüft und optimiert werden (dies ist jedoch weniger kritisch als bei einem CAP-DAC, da keine Ladung verloren geht). Dies kann durch die Dimensionierung oder durch den digitalen Teil mittels `Break-Before-Make` erreicht werden.  
 
 Die FETs werden als Schalter dimensioniert.  
@@ -162,11 +162,11 @@ $$
 I_D = \mu_n Q_n \frac{W}{L} V_{DS} 
 $$  
 
-- $ \mu_n $: Beweglichkeit der Elektronen in der Nähe der Siliziumoberfläche  
-- $ Q_n $: Ladungskonzentration des Kanals pro Flächeneinheit    
-- $ W $: Breite des MOSFET-Kanals    
-- $ L $: Länge des Kanals    
-- $ V_{DS} $: Drain-Source-Spannung    
+- $\mu_n$: Beweglichkeit der Elektronen in der Nähe der Siliziumoberfläche  
+- $Q_n$: Ladungskonzentration des Kanals pro Flächeneinheit    
+- $W$: Breite des MOSFET-Kanals    
+- $L$: Länge des Kanals    
+- $V_{DS}$: Drain-Source-Spannung    
 
 Die folgende Abbildung stammt aus [1]:  
 
