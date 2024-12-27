@@ -114,7 +114,7 @@ Der Widerstandswert wird bei jedem Durchlauf berechnet und in einem Vektor gespe
 ![res_mm_op](./img/res_mm_op.png)  
 
 Die Widerstände zeigen wie erwartet unterschiedliche Werte. Diese bleiben jedoch über mehrere Simulationsläufe konstant!  
-Direkt in `xschem` kann der Vektor nicht ausgegeben werden, da der Sweep-Vektor (X-Achse) nicht für den `const`-Plot verwendet werden kann. In `ngspice` kann mit `plot y vs x` der Sweep (X-Achse) ausgewählt werden (siehe README `xschem_ngspice.md`).  
+Direkt in `xschem` kann der Vektor nicht ausgegeben werden, da der Sweep-Vektor (X-Achse) nicht aus dem `const`-Plot verwendet werden kann. In `ngspice` kann mit `plot y vs x` der Sweep (X-Achse) ausgewählt werden (siehe README `xschem_ngspice.md`).  
 
 Das Simulationssetup wird auf eine `dc`-Simulation umgestellt, um die Darstellung in `xschem` zu erleichtern. Dabei wird die Temperatur anstelle der Spannung variiert.  
 Es wird keine Spannungsabhängigkeit des Widerstands erwartet.  
@@ -136,19 +136,11 @@ Etwas unklar bleibt der Parametersatz `mc` und `tt_mm`. Im Slack-Kanal **open-so
 Nach dem Chatverlauf sollte der Parameter `mc_mm` zur Verfügung stehen. Dieser ist jedoch nicht im PDK enthalten.  
 ![slack_mm_mc](./img/slack_mm_mc.png)  
 
-Wird jedoch `tt_mm` gewählt, können die importierten Spice-Files in der Netzliste eingesehen werden. Es wird angenommen, dass der Mismatch die Änderung des Widerstandswerts von einem zum anderen Widerstand auf demselben Wafer beschreibt. Dies ist relevant.  
+Aufgrund des Chatverlauf wird angenommen, dass der Mismatch die Änderung des Widerstandswerts von einem zum anderen Widerstand auf demselben Wafer beschreibt. Dies ist relevant.  
 Wenn der gesamte Wafer um 10 % höhere Widerstandswerte aufweist, ist dies beim R2R irrelevant, solange die Lastimpedanz und das $R_{DS_{on}}$ des Schalters sehr klein sind.  
 
 Für diese Simulationen wird der Corner `tt_mm` gewählt.  
 
-```plaintext
-.param mc_mm_switch=1
-.param mc_pr_switch=0
-.include /home/ttuser/pdk/sky130A/libs.tech/ngspice/corners/tt.spice
-.include /home/ttuser/pdk/sky130A/libs.tech/ngspice/r+c/res_typical__cap_typical.spice
-.include /home/ttuser/pdk/sky130A/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice
-.include /home/ttuser/pdk/sky130A/libs.tech/ngspice/corners/tt/spespecialized_cells.spice
-```
 
 ## Dimensionierung der FET
 
@@ -166,15 +158,15 @@ Die FETs werden als Schalter dimensioniert.
 
 Bei kleinen Drain-Source-Spannungen $V_{DS}$ kann der Drain-Source-Strom $I_D$ mit folgender Gleichung beschrieben werden [1, Eq. (1.51)]:  
 
-$$
-I_D = \mu_n Q_n \frac{W}{L} V_{DS}\tag{1.51}
+$$ 
+I_D = \mu_n Q_n \frac{W}{L} V_{DS} 
 $$  
 
-- \( \mu_n \): Beweglichkeit der Elektronen in der Nähe der Siliziumoberfläche  
-- \( Q_n \): Ladungskonzentration des Kanals pro Flächeneinheit    
-- \( W \): Breite des MOSFET-Kanals    
-- \( L \): Länge des Kanals    
-- \( V_{DS} \): Drain-Source-Spannung    
+- $ \mu_n $: Beweglichkeit der Elektronen in der Nähe der Siliziumoberfläche  
+- $ Q_n $: Ladungskonzentration des Kanals pro Flächeneinheit    
+- $ W $: Breite des MOSFET-Kanals    
+- $ L $: Länge des Kanals    
+- $ V_{DS} $: Drain-Source-Spannung    
 
 Die folgende Abbildung stammt aus [1]:  
 
@@ -193,6 +185,76 @@ Im PDK sind bestimmte $W/L$-Verhältnisse bereits charakterisiert (siehe [read-t
 Die gleiche Simulation wurde mit dem PFET durchgeführt. Damit sich auch hier ein Widerstand von etwa 800 $\Omega$ ergibt, muss ein $W$ von $16\,\mu m$ gewählt werden:  
 
 ![FET_as_Switch_tb](./img/mos_spec_sw_mm_pfet.png)  
+
+600 $\Omega$ und 800 $\Omega$ gegenüber dem 2R-Pfad von 20k verursachen einen Fehler von 4 %. Dies ist vergleichsweise hoch. Eine Verbesserung lässt sich durch Optimierung der Schalter oder durch Erhöhung der Widerstände von R = 10k auf R = 20k erreichen. Der Komparator sollte eine sehr hohe Eingangsimpedanz aufweisen. Dadurch wird die Quellenimpedanz des DACs weniger relevant. Es wurde entschieden, den Einheitswiderstand auf 20k zu erhöhen.  
+
+Der DAC-Schalter wurde in ein Schaltplansymbol gewandelt und die DC-Eigenschaften mit einer Testbench überprüft. Der zu schaltende Strom liegt bei ca. $37\mu A$. Bei $V_{REF}$ von 2 V ergibt sich ein Widerstand von ca. $54k\Omega$. Für die Simulation wurde vorsichtshalber ein Widerstand von 40k angesetzt. Der Treiberstufe wurde ein Steuersignal von 1,8 V und 0 V zugeführt. Mit einer `op`-Simulation wurden die Knoten berechnet und die Spannung am Ausgang aufgezeichnet. In der Simulation wurden Temperatur, Versorgungsspannung (Vcontrol) und die FET-Parameter mit Mismatch berücksichtigt. Die gemessenen Daten können in eine Textdatei geschrieben und mit Octave geplottet werden.  
+
+![DAC_SW_DC_SW](./img/tb_dac_switch_dc_switching.png)  
+
+![DAC_SW_DC_SW_PLOT](./img/v_low_v_high_op_dac_switch.jpg)  
+
+Das transiente Verhalten kann ebenfalls simuliert werden. Dabei sollte der Querstrom beobachtet werden. Dieser liegt bei einer Ansteuerung mit 1 ns $T_{rise}$ bei ca. 210 $\mu A$. Eine Optimierung ist möglich, wird aber zum aktuellen Zeitpunkt als ausreichend angesehen.  
+
+![DAC_SW_TRAN_SHOOT_THROUGH](./img/tb_dac_switch_trans_sw.png)  
+
+Typischerweise werden Inverter mit einer DC-Analyse verifiziert. Die folgenden Abbildungen stammen aus [1], Kapitel 11.  
+
+![inverter_spec](./img/inv_charact_lit_fig_11_2_11_4.png)  
+
+Der DAC-Schalter wurde ebenfalls mit einer DC-Analyse verifiziert. Das transiente Verhalten ist jedoch deutlich pessimistischer als die DC-Analyse. Simulationen wurden auch mit anderen Corners (`ff`, `sf`, `fs`) durchgeführt. Dabei wurde jedoch nie mehr als 210 $\mu A$ gemessen.  
+
+![dc_dac_switch](./img/tb_dac_switch_dc_transfer.png)  
+
+### Toplevel DAC-Simulation  
+
+Der Schalter für den DAC und die entsprechenden Widerstände wurden ausgewählt. Diese müssen nun mittels hierarchischen Schaltplänen zu einem Top-Level-Spice-Block zusammengesetzt werden. Mit diesem Modell kann die Performance des DACs in einer Testbench ermittelt werden.  
+Für den DAC-Schalter wurde bereits ein Modell erstellt, ebenso für die Widerstände. Diese beiden Blöcke wurden in einem Schaltplan verbunden, woraus erneut ein Modell generiert wurde. Die folgende Abbildung zeigt das Schema:  
+
+![r2r_dac_xschem](./img/R2R_DAC_xschem.png)  
+
+Mit dem Modell wurde eine Testbench erstellt. `xschem` bietet die Möglichkeit, Spice-Quellen mit einer Metasprache, dem `utile Stimuli Editor`, zu beschreiben. Dies vereinfacht die Erstellung der `PWL Vsource`. Der folgende Ausschnitt setzt alle Spannungen `v_b[0:7]` nach 5 ns auf 0. Nach weiteren 5 ns wird `v_b0` auf logisch `1` gesetzt. Das logische `1` kann mit einem Spice-Parameter festgelegt werden. In diesem Fall entspricht es der Betriebsspannung von 1,8 V.  
+
+```plaintext
+beginfile stimuli_tb_dac_codes.cir
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+
+
+```
+Die Quellen werden in der Datei `stimuli_tb_dac_codes.cir` geschrieben. Im Testbench-Code wird diese Datei inkludiert.
+Mit Python kann eine `utile Stimuli`-Datei für alle 256 Codewörter erstellt werden. Der folgende Code zeigt die benötigte Schleife:
+
+```Python
+for i in range(256):
+
+    print("")
+    print("s 5")
+
+    bin_str = f"{i:08b}"
+    for j in range(8):
+        print(f"set v_b{j} {bin_str[7-j]}")
+```
+
+Die Funktion des DACs kann initial überprüft werden. Eine Testbench wurde erstellt, die die Stimuli-Datei lädt und den DAC entsprechend verbindet. Der DAC scheint korrekt zu funktionieren. Es sind auch die typischen Umschaltspitzen bei der Hälfte und beim Viertel zu erkennen. Diese entstehen durch den Signalwechsel am Eingang des DACs.
+
+
+![r2r_dac_tb](./img/r2r_dac_trans_data.png)
+
+Anschliessend wurde der mittlere Übergang vergrössert dargestellt. Beim Wechsel vom Codewort 0x7F auf 0x80 werden einige Zwischenwerte durchlaufen:
+
+![r2r_dac_tb_zoom](./img/dac_switch_7F_80.png)
 
 ### Referenzen  
 
