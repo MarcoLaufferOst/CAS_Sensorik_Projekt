@@ -1,0 +1,2569 @@
+
+unit n
+voltage v_hi
+slope 1
+format hspice_simple
+
+beginfile stimuli_tb_dac_codes.cir
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 0
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 0
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 0
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 0
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 0
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 0
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+s 5
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 1
+
+endfile
