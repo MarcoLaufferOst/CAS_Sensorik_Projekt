@@ -256,6 +256,61 @@ Anschliessend wurde der mittlere Übergang vergrössert dargestellt. Beim Wechse
 
 ![r2r_dac_tb_zoom](./img/dac_switch_7F_80.png)
 
+
+In der `tran`-Simulation wird alle 5 ns der Eingangscode gewechselt. Kurz vor dem Wechsel soll eine Messung durchgeführt werden, die zur Performance-Verifizierung des DACs verwendet wird.  
+
+In der Testbench des DACs werden die Ausgangswerte in eine `raw`-Datei gespeichert. `ngspice` kann diese `raw`-Datei einlesen und nachträglich Messungen ausführen.  
+
+Im File `dac_perf_sim.cir` werden die Simulatoranweisungen für die Messung geschrieben. Die Messungen werden in eine Textdatei ausgegeben. Nachfolgend ein Ausschnitt der Simulatoranweisungen:  
+
+```spice
+.control
+*.... other code here
+
+load simulation/tb_dac_performance.raw
+
+repeat $&sim_loops
+
+    * set the tran sim run
+    setplot tran{$&plotnr}
+    repeat 256
+        
+        meas tran v_dac find v(dac_out) at=$&tm
+
+        let dac_values[index] = v_dac
+        let x_ax[index] = index
+        let tm = tm + 5n
+        let index = index + 1
+
+    end
+* .... other code here
+
+wrdata dac_data.txt dac_values vs x_ax
+```
+
+Am Simulator kann dieses File mitgegeben werden:
+
+```sh
+$> ngspice -i simulation/dac_perf_sim.cir -a
+```
+
+Aus diesen Messdaten kann dann die Integral Nonlinearity (INL) und die Differential Nonlinearity (DNL) berechnet werden.
+
+Die DNL kann mit folgender Formel bestimmt werden:
+$$
+DNL(i) = \frac{V_{out}(i+1) - V_{out}(i)}{V_{LSB}} - 1
+$$
+Die INL kann mit folgender Formel bestimmt werden:
+$$
+INL(i) = \frac{V_{out}(i) - V_{ideal}(i)}{V_{LSB}}
+$$
+
+Das erstellte Textfile kann mit Python eingelesen und die entsprechenden Werte können berechnet werden.  
+
+Die folgenden Plots entstanden mit dem Python-Skript `dac_perf.py` im Ordner `xschem/python`.
+
+![dac_perf_v1](./img/dac_performance_v1.png)
+
 ### Referenzen  
 
 [1] Carusone, T. C., Johns, D., Martin, K. (2012). *Analog Integrated Circuit Design*. Vereinigtes Königreich: Wiley.  
