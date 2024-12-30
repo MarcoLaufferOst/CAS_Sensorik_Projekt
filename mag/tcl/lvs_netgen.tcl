@@ -11,9 +11,9 @@ puts "Reading VERILOG source"
 
 # add any spice files of your analog blocks:
 
-if { [file exists ../xschem/simulation/$project.spice ] == 1 } {
-puts "Reading ../xschem/simulation/$project.spice"
-readnet spice ../xschem/simulation/$project.spice $source
+if { [file exists ../xschem/netlists/$project.spice ] == 1 } {
+puts "Reading ../xschem/netlists/$project.spice"
+readnet spice ../xschem/netlists/$project.spice $source
 
 } else {
 	puts "\n\n\n"
