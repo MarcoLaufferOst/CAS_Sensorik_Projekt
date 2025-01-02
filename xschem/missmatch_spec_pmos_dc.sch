@@ -151,8 +151,8 @@ C {devices/lab_pin.sym} 640 -360 0 0 {name=p2 lab=VGS}
 C {devices/gnd.sym} 960 -440 0 0 {name=l3 lab=GND}
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 740 -360 0 0 {name=M1
 L=0.5
-W=16
-nf=1
+W=80
+nf=5
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"

@@ -28,10 +28,10 @@ logy=0
 
 
 
-x1=-0.0052437945
-x2=0.20709285
-y2=0.00038
-y1=-5.5e-20
+x1=0
+x2=0.2
+y2=0.0023
+y1=-1.1e-18
 sim_type=dc
 sweep=v(in)
 
@@ -60,10 +60,10 @@ logy=0
 
 
 
-x1=-0.0052437945
-x2=0.20709285
-y2=830
-y1=0
+x1=0
+x2=0.2
+y2=160
+y1=-0
 sim_type=dc
 sweep=v(in)
 
@@ -103,8 +103,8 @@ tclcommand="set show_hidden_texts 1; xschem annotate_op"
 }
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 740 -360 0 0 {name=M5
 L=0.5
-W=7
-nf=1 mult=1
+W=35
+nf=5 mult=1
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
