@@ -1,0 +1,7 @@
+** sch_path: /home/ttuser/tinytapeout/TT_Project/xschem/dac_switch.sch
+.subckt dac_switch Vref Dx Outx Vcom
+*.PININFO Dx:I Outx:O Vref:B Vcom:B
+XM1 Outx Dx Vref Vref sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=16 nf=2 m=5
+XM2 Outx Dx Vcom Vcom sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=7 nf=2 m=5
+.ends
+.end
