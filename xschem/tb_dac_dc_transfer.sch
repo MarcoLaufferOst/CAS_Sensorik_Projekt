@@ -13,8 +13,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
-x2=1.28e-06
+x1=7.0417846e-07
+x2=7.4079858e-07
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -52,8 +52,8 @@ digital=1
 
 
 
-x1=0
-x2=1.28e-06
+x1=7.0417846e-07
+x2=7.4079858e-07
 color=4
 node="Code;v_b7,v_b6,v_b5,v_b4,v_b3,v_b2,v_b1,v_b0"}
 N 467.5 -142.5 467.5 -122.5 {
@@ -109,7 +109,7 @@ C {devices/gnd.sym} 977.5 -257.5 0 0 {name=l4 lab=GND}
 C {devices/lab_wire.sym} 957.5 -317.5 0 1 {name=p5 sig_type=std_logic lab=Vref}
 C {devices/gnd.sym} 1057.5 -297.5 0 0 {name=l2 lab=GND}
 C {devices/res.sym} 1057.5 -347.5 0 0 {name=R1
-value=1Meg
+value=100Meg
 footprint=1206
 device=resistor
 m=1}

@@ -94,7 +94,7 @@ C {devices/title.sym} 160 -32.5 0 0 {name=l1 author="Marco Lauffer"}
 C {sky130_fd_pr/corner.sym} 52.5 -217.5 0 0 {name=CORNER only_toplevel=true corner=tt}
 C {devices/launcher.sym} 237.5 -127.5 0 0 {name=h5
 descr="load waves" 
-tclcommand="xschem raw_read $netlist_dir/tb_dac_preformance.raw tran"
+tclcommand="xschem raw_read $netlist_dir/tb_dac_performance.raw tran"
 }
 C {devices/vsource.sym} 1107.5 -162.5 0 0 {name=V1 value=2
 spice_ignore=false}
@@ -133,7 +133,7 @@ let loops = 8
 
 repeat 2
 save v(dac_out)
-tran 1n 1280n
+tran 1n 1290n
 write tb_dac_performance.raw
 plot v(dac_out)
 reset

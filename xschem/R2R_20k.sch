@@ -5,281 +5,281 @@ K {}
 V {}
 S {}
 E {}
-N 200 -350 200 -310 {
+N 160 -320 160 -280 {
 lab=B3}
-N 200 -440 200 -410 {
+N 160 -410 160 -380 {
 lab=#net1}
-N 420 -350 420 -310 {
+N 380 -320 380 -280 {
 lab=B4}
-N 420 -440 420 -410 {
+N 380 -410 380 -380 {
 lab=#net2}
-N 640 -350 640 -310 {
+N 600 -320 600 -280 {
 lab=B5}
-N 640 -440 640 -410 {
+N 600 -410 600 -380 {
 lab=#net3}
-N 840 -350 840 -310 {
+N 800 -320 800 -280 {
 lab=B6}
-N 840 -440 840 -410 {
+N 800 -410 800 -380 {
 lab=#net4}
-N 200 -680 200 -640 {
+N 160 -650 160 -610 {
 lab=COM}
-N 200 -770 200 -740 {
+N 160 -740 160 -710 {
 lab=#net5}
-N 420 -680 420 -640 {
+N 380 -650 380 -610 {
 lab=B0}
-N 420 -770 420 -740 {
+N 380 -740 380 -710 {
 lab=#net6}
-N 640 -680 640 -640 {
+N 600 -650 600 -610 {
 lab=B1}
-N 640 -770 640 -740 {
+N 600 -740 600 -710 {
 lab=#net7}
-N 840 -680 840 -640 {
+N 800 -650 800 -610 {
 lab=B2}
-N 840 -770 840 -740 {
+N 800 -740 800 -710 {
 lab=#net8}
-N 420 -860 420 -830 {
+N 380 -830 380 -800 {
 lab=#net9}
-N 200 -860 420 -860 {
+N 160 -830 380 -830 {
 lab=#net9}
-N 200 -860 200 -830 {
+N 160 -830 160 -800 {
 lab=#net9}
-N 420 -860 500 -860 {
+N 380 -830 460 -830 {
 lab=#net9}
-N 560 -860 640 -860 {
+N 520 -830 600 -830 {
 lab=#net10}
-N 640 -860 640 -830 {
+N 600 -830 600 -800 {
 lab=#net10}
-N 640 -860 720 -860 {
+N 600 -830 680 -830 {
 lab=#net10}
-N 780 -860 840 -860 {
+N 740 -830 800 -830 {
 lab=#net11}
-N 840 -860 840 -830 {
+N 800 -830 800 -800 {
 lab=#net11}
-N 1080 -350 1080 -310 {
+N 1040 -320 1040 -280 {
 lab=B7}
-N 1080 -440 1080 -410 {
+N 1040 -410 1040 -380 {
 lab=#net12}
-N 840 -860 880 -860 {
+N 800 -830 840 -830 {
 lab=#net11}
-N 160 -520 200 -520 {
+N 120 -490 160 -490 {
 lab=H}
-N 200 -520 200 -500 {
+N 160 -490 160 -470 {
 lab=H}
-N 200 -520 280 -520 {
+N 160 -490 240 -490 {
 lab=H}
-N 340 -520 420 -520 {
+N 300 -490 380 -490 {
 lab=#net13}
-N 420 -520 420 -500 {
+N 380 -490 380 -470 {
 lab=#net13}
-N 420 -520 500 -520 {
+N 380 -490 460 -490 {
 lab=#net13}
-N 560 -520 640 -520 {
+N 520 -490 600 -490 {
 lab=#net14}
-N 640 -520 640 -500 {
+N 600 -490 600 -470 {
 lab=#net14}
-N 640 -520 710 -520 {
+N 600 -490 670 -490 {
 lab=#net14}
-N 770 -520 840 -520 {
+N 730 -490 800 -490 {
 lab=#net15}
-N 840 -520 840 -500 {
+N 800 -490 800 -470 {
 lab=#net15}
-N 840 -520 950 -520 {
+N 800 -490 910 -490 {
 lab=#net15}
-N 1010 -520 1080 -520 {
+N 970 -490 1040 -490 {
 lab=OUT}
-N 1080 -520 1080 -500 {
+N 1040 -490 1040 -470 {
 lab=OUT}
-N 1080 -520 1110 -520 {
+N 1040 -490 1070 -490 {
 lab=OUT}
-N 937.5 -860 962.5 -860 {
+N 897.5 -830 922.5 -830 {
 lab=H}
 C {devices/title.sym} 160 -40 0 0 {name=l1 author="Marco Lauffer"}
-C {sky130_fd_pr/res_xhigh_po_0p69.sym} 200 -470 0 0 {name=R1
+C {sky130_fd_pr/res_xhigh_po_0p69.sym} 160 -440 0 0 {name=R1
 W=0.69
 L=7
 model=res_xhigh_po_0p69
 spiceprefix=X
  mult=1}
-C {sky130_fd_pr/res_xhigh_po_0p69.sym} 200 -380 0 0 {name=R2
+C {sky130_fd_pr/res_xhigh_po_0p69.sym} 160 -350 0 0 {name=R2
 W=0.69
 L=7
 model=res_xhigh_po_0p69
 spiceprefix=X
  mult=1}
 C {devices/iopin.sym} 130 -210 2 0 {name=p1 lab=COM}
-C {devices/lab_pin.sym} 180 -380 0 0 {name=p3 lab=COM}
-C {devices/lab_pin.sym} 180 -470 0 0 {name=p4 lab=COM}
-C {sky130_fd_pr/res_xhigh_po_0p69.sym} 420 -470 0 0 {name=R3
+C {devices/lab_pin.sym} 140 -350 0 0 {name=p3 lab=COM}
+C {devices/lab_pin.sym} 140 -440 0 0 {name=p4 lab=COM}
+C {sky130_fd_pr/res_xhigh_po_0p69.sym} 380 -440 0 0 {name=R3
 W=0.69
 L=7
 model=res_xhigh_po_0p69
 spiceprefix=X
  mult=1}
-C {sky130_fd_pr/res_xhigh_po_0p69.sym} 420 -380 0 0 {name=R4
+C {sky130_fd_pr/res_xhigh_po_0p69.sym} 380 -350 0 0 {name=R4
 W=0.69
 L=7
 model=res_xhigh_po_0p69
 spiceprefix=X
  mult=1}
-C {devices/lab_pin.sym} 400 -380 0 0 {name=p6 lab=COM}
-C {devices/lab_pin.sym} 400 -470 0 0 {name=p7 lab=COM}
-C {sky130_fd_pr/res_xhigh_po_0p69.sym} 640 -470 0 0 {name=R5
+C {devices/lab_pin.sym} 360 -350 0 0 {name=p6 lab=COM}
+C {devices/lab_pin.sym} 360 -440 0 0 {name=p7 lab=COM}
+C {sky130_fd_pr/res_xhigh_po_0p69.sym} 600 -440 0 0 {name=R5
 W=0.69
 L=7
 model=res_xhigh_po_0p69
 spiceprefix=X
  mult=1}
-C {sky130_fd_pr/res_xhigh_po_0p69.sym} 640 -380 0 0 {name=R6
+C {sky130_fd_pr/res_xhigh_po_0p69.sym} 600 -350 0 0 {name=R6
 W=0.69
 L=7
 model=res_xhigh_po_0p69
 spiceprefix=X
  mult=1}
-C {devices/lab_pin.sym} 620 -380 0 0 {name=p9 lab=COM}
-C {devices/lab_pin.sym} 620 -470 0 0 {name=p10 lab=COM}
-C {sky130_fd_pr/res_xhigh_po_0p69.sym} 840 -470 0 0 {name=R7
+C {devices/lab_pin.sym} 580 -350 0 0 {name=p9 lab=COM}
+C {devices/lab_pin.sym} 580 -440 0 0 {name=p10 lab=COM}
+C {sky130_fd_pr/res_xhigh_po_0p69.sym} 800 -440 0 0 {name=R7
 W=0.69
 L=7
 model=res_xhigh_po_0p69
 spiceprefix=X
  mult=1}
-C {sky130_fd_pr/res_xhigh_po_0p69.sym} 840 -380 0 0 {name=R8
+C {sky130_fd_pr/res_xhigh_po_0p69.sym} 800 -350 0 0 {name=R8
 W=0.69
 L=7
 model=res_xhigh_po_0p69
 spiceprefix=X
  mult=1}
-C {devices/lab_pin.sym} 820 -380 0 0 {name=p12 lab=COM}
-C {devices/lab_pin.sym} 820 -470 0 0 {name=p13 lab=COM}
-C {sky130_fd_pr/res_xhigh_po_0p69.sym} 200 -800 0 0 {name=R9
+C {devices/lab_pin.sym} 780 -350 0 0 {name=p12 lab=COM}
+C {devices/lab_pin.sym} 780 -440 0 0 {name=p13 lab=COM}
+C {sky130_fd_pr/res_xhigh_po_0p69.sym} 160 -770 0 0 {name=R9
 W=0.69
 L=7
 model=res_xhigh_po_0p69
 spiceprefix=X
  mult=1}
-C {sky130_fd_pr/res_xhigh_po_0p69.sym} 200 -710 0 0 {name=R10
+C {sky130_fd_pr/res_xhigh_po_0p69.sym} 160 -680 0 0 {name=R10
 W=0.69
 L=7
 model=res_xhigh_po_0p69
 spiceprefix=X
  mult=1}
-C {devices/lab_pin.sym} 180 -710 0 0 {name=p15 lab=COM}
-C {devices/lab_pin.sym} 180 -800 0 0 {name=p16 lab=COM}
-C {devices/lab_pin.sym} 200 -640 0 0 {name=p17 lab=COM}
-C {sky130_fd_pr/res_xhigh_po_0p69.sym} 420 -800 0 0 {name=R11
+C {devices/lab_pin.sym} 140 -680 0 0 {name=p15 lab=COM}
+C {devices/lab_pin.sym} 140 -770 0 0 {name=p16 lab=COM}
+C {devices/lab_pin.sym} 160 -610 0 0 {name=p17 lab=COM}
+C {sky130_fd_pr/res_xhigh_po_0p69.sym} 380 -770 0 0 {name=R11
 W=0.69
 L=7
 model=res_xhigh_po_0p69
 spiceprefix=X
  mult=1}
-C {sky130_fd_pr/res_xhigh_po_0p69.sym} 420 -710 0 0 {name=R12
+C {sky130_fd_pr/res_xhigh_po_0p69.sym} 380 -680 0 0 {name=R12
 W=0.69
 L=7
 model=res_xhigh_po_0p69
 spiceprefix=X
  mult=1}
-C {devices/lab_pin.sym} 400 -710 0 0 {name=p18 lab=COM}
-C {devices/lab_pin.sym} 400 -800 0 0 {name=p19 lab=COM}
-C {sky130_fd_pr/res_xhigh_po_0p69.sym} 640 -800 0 0 {name=R13
+C {devices/lab_pin.sym} 360 -680 0 0 {name=p18 lab=COM}
+C {devices/lab_pin.sym} 360 -770 0 0 {name=p19 lab=COM}
+C {sky130_fd_pr/res_xhigh_po_0p69.sym} 600 -770 0 0 {name=R13
 W=0.69
 L=7
 model=res_xhigh_po_0p69
 spiceprefix=X
  mult=1}
-C {sky130_fd_pr/res_xhigh_po_0p69.sym} 640 -710 0 0 {name=R14
+C {sky130_fd_pr/res_xhigh_po_0p69.sym} 600 -680 0 0 {name=R14
 W=0.69
 L=7
 model=res_xhigh_po_0p69
 spiceprefix=X
  mult=1}
-C {devices/lab_pin.sym} 620 -710 0 0 {name=p21 lab=COM}
-C {devices/lab_pin.sym} 620 -800 0 0 {name=p22 lab=COM}
-C {sky130_fd_pr/res_xhigh_po_0p69.sym} 840 -800 0 0 {name=R15
+C {devices/lab_pin.sym} 580 -680 0 0 {name=p21 lab=COM}
+C {devices/lab_pin.sym} 580 -770 0 0 {name=p22 lab=COM}
+C {sky130_fd_pr/res_xhigh_po_0p69.sym} 800 -770 0 0 {name=R15
 W=0.69
 L=7
 model=res_xhigh_po_0p69
 spiceprefix=X
  mult=1}
-C {sky130_fd_pr/res_xhigh_po_0p69.sym} 840 -710 0 0 {name=R16
+C {sky130_fd_pr/res_xhigh_po_0p69.sym} 800 -680 0 0 {name=R16
 W=0.69
 L=7
 model=res_xhigh_po_0p69
 spiceprefix=X
  mult=1}
-C {devices/lab_pin.sym} 820 -710 0 0 {name=p24 lab=COM}
-C {devices/lab_pin.sym} 820 -800 0 0 {name=p25 lab=COM}
-C {sky130_fd_pr/res_xhigh_po_0p69.sym} 530 -860 3 0 {name=R18
+C {devices/lab_pin.sym} 780 -680 0 0 {name=p24 lab=COM}
+C {devices/lab_pin.sym} 780 -770 0 0 {name=p25 lab=COM}
+C {sky130_fd_pr/res_xhigh_po_0p69.sym} 490 -830 3 0 {name=R18
 W=0.69
 L=7
 model=res_xhigh_po_0p69
 spiceprefix=X
  mult=1}
-C {sky130_fd_pr/res_xhigh_po_0p69.sym} 750 -860 3 0 {name=R19
+C {sky130_fd_pr/res_xhigh_po_0p69.sym} 710 -830 3 0 {name=R19
 W=0.69
 L=7
 model=res_xhigh_po_0p69
 spiceprefix=X
  mult=1}
-C {sky130_fd_pr/res_xhigh_po_0p69.sym} 310 -520 3 0 {name=R20
+C {sky130_fd_pr/res_xhigh_po_0p69.sym} 270 -490 3 0 {name=R20
 W=0.69
 L=7
 model=res_xhigh_po_0p69
 spiceprefix=X
  mult=1}
-C {sky130_fd_pr/res_xhigh_po_0p69.sym} 530 -520 3 0 {name=R21
+C {sky130_fd_pr/res_xhigh_po_0p69.sym} 490 -490 3 0 {name=R21
 W=0.69
 L=7
 model=res_xhigh_po_0p69
 spiceprefix=X
  mult=1}
-C {sky130_fd_pr/res_xhigh_po_0p69.sym} 740 -520 3 0 {name=R22
+C {sky130_fd_pr/res_xhigh_po_0p69.sym} 700 -490 3 0 {name=R22
 W=0.69
 L=7
 model=res_xhigh_po_0p69
 spiceprefix=X
  mult=1}
-C {devices/lab_pin.sym} 310 -500 0 0 {name=p27 lab=COM}
-C {devices/lab_pin.sym} 530 -500 0 0 {name=p28 lab=COM}
-C {devices/lab_pin.sym} 740 -500 0 0 {name=p29 lab=COM}
-C {devices/lab_pin.sym} 530 -840 0 0 {name=p31 lab=COM}
-C {devices/lab_pin.sym} 750 -840 0 0 {name=p32 lab=COM}
-C {devices/iopin.sym} 420 -640 2 0 {name=p30 lab=B0}
-C {devices/iopin.sym} 640 -640 2 0 {name=p20 lab=B1}
-C {sky130_fd_pr/res_xhigh_po_0p69.sym} 1080 -470 0 0 {name=R17
+C {devices/lab_pin.sym} 270 -470 0 0 {name=p27 lab=COM}
+C {devices/lab_pin.sym} 490 -470 0 0 {name=p28 lab=COM}
+C {devices/lab_pin.sym} 700 -470 0 0 {name=p29 lab=COM}
+C {devices/lab_pin.sym} 490 -810 0 0 {name=p31 lab=COM}
+C {devices/lab_pin.sym} 710 -810 0 0 {name=p32 lab=COM}
+C {devices/iopin.sym} 380 -610 2 0 {name=p30 lab=B0}
+C {devices/iopin.sym} 600 -610 2 0 {name=p20 lab=B1}
+C {sky130_fd_pr/res_xhigh_po_0p69.sym} 1040 -440 0 0 {name=R17
 W=0.69
 L=7
 model=res_xhigh_po_0p69
 spiceprefix=X
  mult=1}
-C {sky130_fd_pr/res_xhigh_po_0p69.sym} 1080 -380 0 0 {name=R23
+C {sky130_fd_pr/res_xhigh_po_0p69.sym} 1040 -350 0 0 {name=R23
 W=0.69
 L=7
 model=res_xhigh_po_0p69
 spiceprefix=X
  mult=1}
-C {devices/lab_pin.sym} 1060 -380 0 0 {name=p23 lab=COM}
-C {devices/lab_pin.sym} 1060 -470 0 0 {name=p33 lab=COM}
-C {sky130_fd_pr/res_xhigh_po_0p69.sym} 980 -520 3 0 {name=R24
+C {devices/lab_pin.sym} 1020 -350 0 0 {name=p23 lab=COM}
+C {devices/lab_pin.sym} 1020 -440 0 0 {name=p33 lab=COM}
+C {sky130_fd_pr/res_xhigh_po_0p69.sym} 940 -490 3 0 {name=R24
 W=0.69
 L=7
 model=res_xhigh_po_0p69
 spiceprefix=X
  mult=1}
-C {devices/lab_pin.sym} 980 -500 0 0 {name=p35 lab=COM}
-C {devices/lab_pin.sym} 962.5 -860 0 1 {name=p36 lab=H}
-C {devices/lab_pin.sym} 160 -520 0 0 {name=p37 lab=H}
+C {devices/lab_pin.sym} 940 -470 0 0 {name=p35 lab=COM}
+C {devices/lab_pin.sym} 922.5 -830 0 1 {name=p36 lab=H}
+C {devices/lab_pin.sym} 120 -490 0 0 {name=p37 lab=H}
 C {devices/iopin.sym} 130 -170 2 0 {name=p38 lab=OUT}
-C {devices/lab_pin.sym} 1110 -520 2 0 {name=p40 lab=OUT}
-C {devices/iopin.sym} 840 -640 2 0 {name=p26 lab=B2}
-C {devices/iopin.sym} 200 -310 2 0 {name=p41 lab=B3}
-C {devices/iopin.sym} 420 -310 2 0 {name=p5 lab=B4}
-C {devices/iopin.sym} 640 -310 2 0 {name=p8 lab=B5}
-C {devices/iopin.sym} 840 -310 2 0 {name=p11 lab=B6}
-C {devices/iopin.sym} 1080 -310 2 0 {name=p14 lab=B7}
-C {sky130_fd_pr/res_xhigh_po_0p69.sym} 907.5 -860 3 0 {name=R25
+C {devices/lab_pin.sym} 1070 -490 2 0 {name=p40 lab=OUT}
+C {devices/iopin.sym} 800 -610 2 0 {name=p26 lab=B2}
+C {devices/iopin.sym} 160 -280 2 0 {name=p41 lab=B3}
+C {devices/iopin.sym} 380 -280 2 0 {name=p5 lab=B4}
+C {devices/iopin.sym} 600 -280 2 0 {name=p8 lab=B5}
+C {devices/iopin.sym} 800 -280 2 0 {name=p11 lab=B6}
+C {devices/iopin.sym} 1040 -280 2 0 {name=p14 lab=B7}
+C {sky130_fd_pr/res_xhigh_po_0p69.sym} 867.5 -830 3 0 {name=R25
 W=0.69
 L=7
 model=res_xhigh_po_0p69
 spiceprefix=X
  mult=1}
-C {devices/lab_pin.sym} 907.5 -840 0 0 {name=p2 lab=COM}
+C {devices/lab_pin.sym} 867.5 -810 0 0 {name=p2 lab=COM}
