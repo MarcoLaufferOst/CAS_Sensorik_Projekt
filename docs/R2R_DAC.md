@@ -314,6 +314,36 @@ Die folgenden Plots entstanden mit dem Python-Skript `dac_perf.py` im Ordner `xs
 
 ![dac_perf_v1](./img/dac_performance_v1.png)
 
+Aus der Auswertung wird Folgendes interpretiert:
+
+* Die Ausreisser bei der DNL nahe und über 1 LSB (128/64) resultieren aus dem Widerstand des DAC-Schalters. Diese Ausreisser verursachen auch die Stufenbildung bei der INL.
+* Anhand der INL kann ein Gain-Fehler erkannt werden. Abgesehen von den Stufen sinkt der Funktionswert monoton.
+
+Der Offset wurde auf einfache Weise herausgerechnet, indem der Wert beim Codewort 0 von allen anderen Codewörternwerten subtrahiert wurde. Eine genauere Methode ist ein Funktionsfitting mit Least squares. Dies kann mit der polyfit-Funktion der in Python verwendeten Bibliothek `numpy` leicht umgesetzt werden:
+
+```python
+#better offset compensation is to create a linear regression with a ployfit (least squares) 1 deg
+dummy_x = np.arange(len(voltages))
+
+# std form of linear function x = ax+b
+a,b = np.polyfit(dummy_x,voltages,1)
+offset = b
+
+voltages_no_offset = voltages -offset
+```
+Diese Methode zeigt jedoch keine Verbesserung der INL.
+
+Der Gain-Fehler kann durch eine hohe Ausgangslast des DACs verursacht werden. In der ursprünglichen Simulation wurde der DAC mit `1 Meg` belastet. In der überarbeiteten Simulation wurde die Last auf `100 Meg` erhöht. Zusätzlich wurde der DAC-Schalter um den Faktor 5 vergrössert (NFET 16/0.5 und PFET 35/0.5, jeweils mit nf = 5). Dadurch reduziert sich der Widerstand auf ca. 100 - 150 Ohm, was deutlich kleiner ist als 40 kΩ (2R -> 20 kΩ entspricht 1R). Die folgende Abbildung zeigt die Wiederholung der Simulation der DAC-Schalter-FETs:
+
+![dac_sw_v2](./img/DAC_Switch_opt.png)
+
+Die Simulation des DACs wurde mit den neuen DAC-Schaltern und der neuen DAC-Last von 100 Meg wiederholt. Die folgende Abbildung zeigt das Ergebnis. Eine deutliche Verbesserung ist erkennbar – INL und DNL liegen nun innerhalb von $\frac{1}{2}$ LSB:
+
+![dac_perf_v2](./img/dac_performance_v2.png)
+
+Es wird jedoch ein deutlich höherer Querstrom erwartet, da der Kanalwiderstand erheblich reduziert wurde. Eine Verzögerung des PFETs könnte durch den Einsatz von zwei Invertern erreicht werden. Vorerst wird jedoch keine weitere Optimierung vorgenommen.
+
+
 ### Referenzen  
 
 [1] Carusone, T. C., Johns, D., Martin, K. (2012). *Analog Integrated Circuit Design*. Vereinigtes Königreich: Wiley.  
