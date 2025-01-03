@@ -20,6 +20,13 @@ sed -i \
   -e 's|{iopin\.sym}|{devices/iopin.sym}|g' \
   -e 's|{lab_wire\.sym}|{devices/lab_wire.sym}|g' \
   -e 's|{opin\.sym}|{devices/opin.sym}|g' \
+  -e 's|{isource\.sym}|{devices/isource.sym}|g' \
+  -e 's|{gnd\.sym}|{devices/gnd.sym}|g' \
+  -e 's|{vdd\.sym}|{devices/vdd.sym}|g' \
+  -e 's|{capa\.sym}|{devices/capa.sym}|g' \
+  -e 's|{code\.sym}|{devices/code.sym}|g' \
+  -e 's|{vsource\.sym}|{devices/vsource.sym}|g' \
+  -e 's|{vdd\.sym}|{devices/vdd.sym}|g' \
   "$FILE"
 
 if [[ $? -eq 0 ]]; then
