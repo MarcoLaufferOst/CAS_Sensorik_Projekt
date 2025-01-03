@@ -10,12 +10,13 @@ endif
 SIM_DIR := simulation
 TESTSBENCHES := $(wildcard tb_$(PROJECT_NAME)_*.sch)
 
-.PHONY: xschem clean
+.PHONY: xschem clean netlist_lvs
 
 info:
 	@echo "Possible commands:"
-	@echo "  xschem      - Run xschem with the project .schem file"
+	@echo "  xschem      - Run xschem with the project .sch file"
 	@echo "  testbench   - Run xschem with all the tb_{project}_xxx files"
+	@echo "  netlist_lvs - create netlist for LVS and spice import in magic"
 	@echo "  sim         - runs all testbenches"
 	@echo "  clean       - Clean up generated files"
 	@echo ""
@@ -38,8 +39,14 @@ $(SIM_DIR)/tb_$(PROJECT_NAME)_%.spice: tb_$(PROJECT_NAME)_%.sch
 netlists: $(patsubst tb_$(PROJECT_NAME)_%.sch,$(SIM_DIR)/tb_$(PROJECT_NAME)_%.spice,$(SCHEMATICS))
 	@echo "Alle Netzlisten wurden erstellt."
 
+netlist_lvs:
+
+	@echo "create netlist for for LVS $<"
+	xschem -n -s -r -x -q --tcl "set lvs_netlist 1" $(PROJECT_NAME).sch -o $(PROJECT_NAME).spice
+	cp simulation/$(PROJECT_NAME).spice netlists/
 
 
 clean:
 	rm -f simulation/*.raw
 	rm -f simulation/tb_*.spice
+	rm -f simulation/*.spice
