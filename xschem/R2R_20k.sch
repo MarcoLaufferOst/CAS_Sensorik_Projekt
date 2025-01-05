@@ -93,6 +93,30 @@ N 1040 -490 1070 -490 {
 lab=OUT}
 N 897.5 -830 922.5 -830 {
 lab=H}
+N 1000 -770 1020 -770 {
+lab=#net16}
+N 1000 -800 1000 -770 {
+lab=#net16}
+N 1000 -800 1040 -800 {
+lab=#net16}
+N 1010 -680 1040 -680 {
+lab=#net17}
+N 1000 -680 1010 -680 {
+lab=#net17}
+N 1000 -680 1000 -650 {
+lab=#net17}
+N 1000 -650 1020 -650 {
+lab=#net17}
+N 1000 -620 1040 -620 {
+lab=#net17}
+N 1000 -650 1000 -620 {
+lab=#net17}
+N 1000 -740 1040 -740 {
+lab=#net16}
+N 1000 -770 1000 -740 {
+lab=#net16}
+N 1040 -710 1040 -680 {}
+N 1040 -740 1040 -710 {}
 C {devices/title.sym} 160 -40 0 0 {name=l1 author="Marco Lauffer"}
 C {sky130_fd_pr/res_xhigh_po_0p69.sym} 160 -440 0 0 {name=R1
 W=0.69
@@ -283,3 +307,16 @@ model=res_xhigh_po_0p69
 spiceprefix=X
  mult=1}
 C {devices/lab_pin.sym} 867.5 -810 0 0 {name=p2 lab=COM}
+C {sky130_fd_pr/res_xhigh_po_0p69.sym} 1040 -770 0 0 {name=R26
+W=0.69
+L=7
+model=res_xhigh_po_0p69
+spiceprefix=X
+ mult=1}
+C {sky130_fd_pr/res_xhigh_po_0p69.sym} 1040 -650 0 0 {name=R27
+W=0.69
+L=7
+model=res_xhigh_po_0p69
+spiceprefix=X
+ mult=1}
+C {devices/lab_pin.sym} 1040 -710 0 0 {name=p34 lab=COM}

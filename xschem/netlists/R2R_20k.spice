@@ -26,5 +26,7 @@ XR17 net12 OUT COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
 XR23 B7 net12 COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
 XR24 OUT net15 COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
 XR25 H net11 COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+XR26 COM COM COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+XR27 COM COM COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
 .ends
 .end
