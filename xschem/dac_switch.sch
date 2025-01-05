@@ -36,8 +36,8 @@ lab=Outx}
 C {devices/title.sym} 160 -30 0 0 {name=l1 author="Marco Lauffer"}
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 570 -460 0 0 {name=M1
 L=0.5
-W=80
-nf=5
+W=48
+nf=3
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
@@ -50,8 +50,8 @@ spiceprefix=X
 }
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 570 -360 0 0 {name=M2
 L=0.5
-W=35
-nf=5
+W=21
+nf=3
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
