@@ -11,13 +11,14 @@ endif
 MAGIC_RC := $(PDK_ROOT)/sky130A/libs.tech/magic/sky130A.magicrc
 TEMPLATE_FILE := tt_analog_2x2_3v3.def
 
-.PHONY: lvs magic start info
+.PHONY: lvs magic info sim
 
 info:
 	@echo "Possible commands:"
 	@echo "  magic       - Run Magic with the project .mag file"
 	@echo "  lvs         - Run LVS checks"
 	@echo "  drc         - Run DRC checks"
+	@echo "  sim         - extract spice for simulation"
 	@echo "  update_gds  - Update GDS and LEF files"
 	@echo "  clean       - Clean up generated files"
 	@echo ""
@@ -42,6 +43,9 @@ drc:
 $(PROJECT_NAME).sim.spice: $(PROJECT_NAME).mag
 	magic -rcfile $(MAGIC_RC) -noconsole -dnull tcl/extract_for_sim.tcl $(PROJECT_NAME)
 	rm -f *.ext
+
+sim: $(PROJECT_NAME).sim.spice
+	@echo "extract job done..."
 
 lvs.report: $(PROJECT_NAME).lvs.spice ../src/project.v
 	netgen -batch eval "set project $(PROJECT_NAME) ; source tcl/lvs_netgen.tcl"
