@@ -6,15 +6,15 @@ V {}
 S {}
 E {}
 B 2 192.5 -1440 995 -882.5 {flags=graph
-y1=0.0077
-y2=2
+y1=0.60164133
+y2=1.4493508
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
-x2=1.28e-06
+x1=7.6007347e-07
+x2=7.7226971e-07
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -52,8 +52,8 @@ digital=1
 
 
 
-x1=0
-x2=1.28e-06
+x1=7.6007347e-07
+x2=7.7226971e-07
 color=4
 node="Code;v_b7,v_b6,v_b5,v_b4,v_b3,v_b2,v_b1,v_b0"}
 N 1107.5 -132.5 1107.5 -112.5 {
@@ -131,8 +131,8 @@ C {devices/code.sym} 400 -210 0 0 {name=s1 only_toplevel=false value="
 let index = 0
 let loops = 8
 
-repeat 2
-save v(dac_out)
+repeat 1
+save v(dac_out) v(v_b0) v(v_b1) v(v_b2) v(v_b3) v(v_b4) v(v_b5) v(v_b6) v(v_b7) 
 tran 1n 1290n
 write tb_dac_performance.raw
 plot v(dac_out)
