@@ -45,7 +45,8 @@ $(PROJECT_NAME).sim.spice: $(PROJECT_NAME).mag
 	rm -f *.ext
 
 sim: $(PROJECT_NAME).sim.spice
-	@echo "extract job done..."
+	@echo "extract job done. Try to copy the files to the xschem folder..."
+	cp *parax* ./../xschem/extracted
 
 lvs.report: $(PROJECT_NAME).lvs.spice ../src/project.v
 	netgen -batch eval "set project $(PROJECT_NAME) ; source tcl/lvs_netgen.tcl"
@@ -83,4 +84,4 @@ update_gds:
 	magic -rcfile $(MAGIC_RC) -noconsole -dnull tcl/update_gds_lef.tcl $(PROJECT_NAME)
 
 clean:
-	rm -f lvs.report *.lvs.spice *.nodes
+	rm -f lvs.report *.lvs.spice *.nodes *parax.sim *parax.spice *.sim.spice
