@@ -1,0 +1,44 @@
+magic
+tech sky130A
+timestamp 1736160504
+use dac_switch  dac_switch_0
+timestamp 1736094482
+transform 1 0 -837 0 1 723
+box 371 -723 837 2195
+use dac_switch  dac_switch_1
+timestamp 1736094482
+transform 1 0 -467 0 1 724
+box 371 -723 837 2195
+use dac_switch  dac_switch_2
+timestamp 1736094482
+transform 1 0 -96 0 1 724
+box 371 -723 837 2195
+use dac_switch  dac_switch_3
+timestamp 1736094482
+transform 1 0 275 0 1 724
+box 371 -723 837 2195
+use dac_switch  dac_switch_4
+timestamp 1736094482
+transform 1 0 646 0 1 724
+box 371 -723 837 2195
+use dac_switch  dac_switch_5
+timestamp 1736094482
+transform 1 0 1017 0 1 724
+box 371 -723 837 2195
+use dac_switch  dac_switch_6
+timestamp 1736094482
+transform 1 0 1388 0 1 724
+box 371 -723 837 2195
+use dac_switch  dac_switch_7
+timestamp 1736094482
+transform 1 0 1759 0 1 724
+box 371 -723 837 2195
+use dac_switch  dac_switch_8
+timestamp 1736094482
+transform 1 0 2130 0 1 724
+box 371 -723 837 2195
+use R2R_20k  R2R_20k_0
+timestamp 1736115234
+transform 1 0 -1557 0 1 137
+box 1159 -1502 4436 -200
+<< end >>

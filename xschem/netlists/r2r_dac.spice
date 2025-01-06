@@ -1,0 +1,59 @@
+** sch_path: /home/ttuser/tinytapeout/TT_Project/xschem/r2r_dac.sch
+.subckt r2r_dac V_out D7 D0 D1 D6 D2 D5 D3 D4 V_REF V_COM
+*.PININFO D0:I V_out:O V_REF:B V_COM:B D1:I D2:I D3:I D7:I D6:I D5:I D4:I
+x1 net2 net1 net3 net4 net8 net5 net7 net6 V_COM V_out R2R_20k
+x2 V_REF D0 net1 V_COM dac_switch
+x3 V_REF D1 net2 V_COM dac_switch
+x4 V_REF D2 net3 V_COM dac_switch
+x5 V_REF D3 net4 V_COM dac_switch
+x6 V_REF D7 net8 V_COM dac_switch
+x7 V_REF D6 net7 V_COM dac_switch
+x8 V_REF D5 net6 V_COM dac_switch
+x9 V_REF D4 net5 V_COM dac_switch
+.ends
+
+* expanding   symbol:  R2R_20k.sym # of pins=10
+** sym_path: /home/ttuser/tinytapeout/TT_Project/xschem/R2R_20k.sym
+** sch_path: /home/ttuser/tinytapeout/TT_Project/xschem/R2R_20k.sch
+.subckt R2R_20k B1 B0 B2 B3 B7 B4 B6 B5 COM OUT
+*.PININFO COM:B B0:B B1:B OUT:B B2:B B3:B B4:B B5:B B6:B B7:B
+XR1 net1 H COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+XR2 B3 net1 COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+XR3 net2 net13 COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+XR4 B4 net2 COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+XR5 net3 net14 COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+XR6 B5 net3 COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+XR7 net4 net15 COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+XR8 B6 net4 COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+XR9 net5 net9 COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+XR10 COM net5 COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+XR11 net6 net9 COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+XR12 B0 net6 COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+XR13 net7 net10 COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+XR14 B1 net7 COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+XR15 net8 net11 COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+XR16 B2 net8 COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+XR18 net10 net9 COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+XR19 net11 net10 COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+XR20 net13 H COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+XR21 net14 net13 COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+XR22 net15 net14 COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+XR17 net12 OUT COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+XR23 B7 net12 COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+XR24 OUT net15 COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+XR25 H net11 COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+XR26 COM COM COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+XR27 COM COM COM sky130_fd_pr__res_xhigh_po_0p69 L=7 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  dac_switch.sym # of pins=4
+** sym_path: /home/ttuser/tinytapeout/TT_Project/xschem/dac_switch.sym
+** sch_path: /home/ttuser/tinytapeout/TT_Project/xschem/dac_switch.sch
+.subckt dac_switch Vref Dx Outx Vcom
+*.PININFO Dx:I Outx:O Vref:B Vcom:B
+XM1 Outx Dx Vref Vref sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=48 nf=3 m=1
+XM2 Outx Dx Vcom Vcom sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=21 nf=3 m=1
+.ends
+
+.end
