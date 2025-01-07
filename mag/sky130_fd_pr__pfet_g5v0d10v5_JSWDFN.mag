@@ -1,0 +1,73 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1735905531
+<< error_p >>
+rect -224 -2566 -194 2566
+rect -158 -2500 -128 2500
+rect 128 -2500 158 2500
+rect 194 -2566 224 2566
+<< nwell >>
+rect -194 -2600 194 2600
+<< mvpmos >>
+rect -100 -2500 100 2500
+<< mvpdiff >>
+rect -158 2488 -100 2500
+rect -158 -2488 -146 2488
+rect -112 -2488 -100 2488
+rect -158 -2500 -100 -2488
+rect 100 2488 158 2500
+rect 100 -2488 112 2488
+rect 146 -2488 158 2488
+rect 100 -2500 158 -2488
+<< mvpdiffc >>
+rect -146 -2488 -112 2488
+rect 112 -2488 146 2488
+<< poly >>
+rect -100 2581 100 2597
+rect -100 2547 -84 2581
+rect 84 2547 100 2581
+rect -100 2500 100 2547
+rect -100 -2547 100 -2500
+rect -100 -2581 -84 -2547
+rect 84 -2581 100 -2547
+rect -100 -2597 100 -2581
+<< polycont >>
+rect -84 2547 84 2581
+rect -84 -2581 84 -2547
+<< locali >>
+rect -100 2547 -84 2581
+rect 84 2547 100 2581
+rect -146 2488 -112 2504
+rect -146 -2504 -112 -2488
+rect 112 2488 146 2504
+rect 112 -2504 146 -2488
+rect -100 -2581 -84 -2547
+rect 84 -2581 100 -2547
+<< viali >>
+rect -84 2547 84 2581
+rect -146 -2488 -112 2488
+rect 112 -2488 146 2488
+rect -84 -2581 84 -2547
+<< metal1 >>
+rect -96 2581 96 2587
+rect -96 2547 -84 2581
+rect 84 2547 96 2581
+rect -96 2541 96 2547
+rect -152 2488 -106 2500
+rect -152 -2488 -146 2488
+rect -112 -2488 -106 2488
+rect -152 -2500 -106 -2488
+rect 106 2488 152 2500
+rect 106 -2488 112 2488
+rect 146 -2488 152 2488
+rect 106 -2500 152 -2488
+rect -96 -2547 96 -2541
+rect -96 -2581 -84 -2547
+rect 84 -2581 96 -2547
+rect -96 -2587 96 -2581
+<< properties >>
+string gencell sky130_fd_pr__pfet_g5v0d10v5
+string library sky130
+string parameters w 25.0 l 1.0 m 1 nf 1 diffcov 100 polycov 100 guard 0 glc 0 grc 0 gtc 0 gbc 0 tbcov 100 rlcov 100 topc 1 botc 1 poverlap 0 doverlap 1 lmin 0.50 wmin 0.42 compatible {sky130_fd_pr__pfet_01v8  sky130_fd_pr__pfet_01v8_lvt sky130_fd_pr__pfet_01v8_hvt  sky130_fd_pr__pfet_g5v0d10v5} full_metal 0 viasrc 100 viadrn 100 viagate 100 viagb 0 viagr 0 viagl 0 viagt 0
+<< end >>
