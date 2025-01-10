@@ -377,12 +377,21 @@ make netlist_lvs
 cd mag
 make lvs
 ```
-Aus dem Layout können die parasitären Widerstände und Kapazitäten extrahiert werden (Parasitic Layout Extraction, siehe [read-the-docs](https://skywater-pdk.readthedocs.io/en/main/rules/rcx.html)). Dieser Schritt wurde ebenfalls ins Makefile integriert und kann mit `sim` ausgeführt werden:
+Aus dem Layout können die parasitären Widerstände und Kapazitäten extrahiert werden (Parasitic Layout Extraction  siehe [read-the-docs](https://skywater-pdk.readthedocs.io/en/main/rules/rcx.html)). Dieser `parax` Schritt wurde ebenfalls ins Makefile integriert und kann mit `sim` ausgeführt werden:
 
 ```bash
 cd mag
 make sim
 ``` 
+
+
+Der Schritt erzeugt ein `subckt` in einer `.spice`-Datei. Die so erzeugte Datei für den R2R-DAC befindet sich in `xschem/extracted/` und kann im Schematool `xschem` in der Testbench verwendet werden. Das Symbol muss mit den folgenden Eigenschaften versehen werden:
+
+![Parasitics-Testbench](./img/dac_parax_testbench.png)
+
+Die Testbench des DACs wurde mit dem `parax`-Modell wiederholt simuliert. Es konnten keine signifikanten Verschlechterungen festgestellt werden. Die folgende Abbildung zeigt die Simulation der Testbench `xschem/tb_dac_parax_perf.sch`:
+
+![DAC-Parasitics-Testbench](./img/dac_parax_testbench_sim_res.png)
 
 
 ### Referenzen  
