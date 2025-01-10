@@ -343,7 +343,50 @@ Die Simulation des DACs wurde mit den neuen DAC-Schaltern und der neuen DAC-Last
 
 Es wird jedoch ein deutlich höherer Querstrom erwartet, da der Kanalwiderstand erheblich reduziert wurde. Eine Verzögerung des PFETs könnte durch den Einsatz von zwei Invertern erreicht werden. Vorerst wird jedoch keine weitere Optimierung vorgenommen.
 
+## Layout
+
+Die Widerstände im DAC sind kritisch für das Matching. Entsprechend sollte dies beim Layout berücksichtigt werden. In [1] wird das Common-Centroid-Layout (CC) vorgestellt. Damit soll der Fehler durch Prozessgradienten minimiert werden.
+
+![CC-Layout](./img/CC_Layout_fig_5_7.png)
+
+Weiterhin wird auf das `substrate noise` eingegangen. Dieses kann durch einen `Guard Ring` reduziert werden. Folgend ein Ausschnitt aus [1]:
+
+![Guard Ring](./img/guard_ring_res.png)
+
+Um ein ideales CC-Layout zu erreichen, kann der Widerstand $R$ in weitere Einheiten unterteilt werden. Diese Einheiten werden gleichmässig um ein Zentrum verteilt. Die ideale Verteilung könnte mithilfe von Algorithmen automatisiert werden [2]. Da das Layout-File textbasiert ist, wäre es möglich, ein entsprechendes Tool in Python zu entwickeln. Dies liegt jedoch ausserhalb des Projektumfangs. 
+
+Aufgrund der ungeübten Handhabung des Layout-Tools `Magic` wurde auf ein besseres Matching mit CC verzichtet. Stattdessen wurde eine `PCELL` konfiguriert, die 27 Widerstände à 20 k$\Omega$ mit einem Guard Ring erzeugt. Der Guard Ring ist oben offen (kein Top-Metal, jedoch Left, Right und Bottom Metal). Das Routing wurde auf Metal 1 (violett) durchgeführt. Die folgende Abbildung zeigt die Konfiguration der `PCELL` sowie das Layout der R2R-Widerstände. Die Abbildung unten rechts zeigt den isolierten M1-Layer. Links und rechts wird jeweils ein Widerstand als Dummy verwendet, der kurzgeschlossen ist.
+
+![R2R-Widerstandslayout](./img/r2r_layout.png)
+
+Durch die Verteilung entsteht eine Breite des R2R-Netzwerks, entlang derer die DAC-Switches angeordnet werden können. Dabei wurde nicht weiter auf das Matching geachtet. Der PFET und NFET liegen übereinander, und das Layout wurde auf Metal 1 (violett) und Metal 2 (pink) ausgeführt. Die folgende Abbildung zeigt das Layout sowie isoliert die Metallschichten M1 und M2.
+
+![DAC-Switch-Layout](./img/dac_switch_layout.png)
+
+Auf einer höheren Hierarchieebene können die erstellten Zellen (DAC-Switch und R2R Netzwerk) in ein Layout für den gesamten R2R-DAC integriert werden. Die folgende Abbildung zeigt das gesamte Layout des DACs. Rechts sind die Metallagen M1 (violett) und M2 (pink) isoliert dargestellt.
+
+![DAC-Gesamtlayout](./img/r2r_dac_layout.png)
+
+### LVS und parasitäre Extraktion
+
+Der DAC-Switch, das R2R-Netzwerk und der gesamte DAC können mit LVS überprüft werden. Dazu muss jeweils aus dem Schaltplan eine Netzliste erzeugt werden. Die folgenden `make`-Befehle zeigen den Prozess:
+
+```bash
+cd xschem
+make netlist_lvs
+cd mag
+make lvs
+```
+Aus dem Layout können die parasitären Widerstände und Kapazitäten extrahiert werden (Parasitic Layout Extraction, siehe [read-the-docs](https://skywater-pdk.readthedocs.io/en/main/rules/rcx.html)). Dieser Schritt wurde ebenfalls ins Makefile integriert und kann mit `sim` ausgeführt werden:
+
+```bash
+cd mag
+make sim
+``` 
+
 
 ### Referenzen  
 
 [1] Carusone, T. C., Johns, D., Martin, K. (2012). *Analog Integrated Circuit Design*. Vereinigtes Königreich: Wiley.  
+
+[2] V. Borisov, K. Langner, J. Scheible and B. Prautsch, "A novel approach for automatic common-centroid pattern generation," 2017 14th International Conference on Synthesis, Modeling, Analysis and Simulation Methods and Applications to Circuit Design (SMACD), Giardini Naxos, Italy, 2017, pp. 1-4, doi: 10.1109/SMACD.2017.7981584.
