@@ -35,6 +35,9 @@ This guide covers the essential commands and shortcuts for using MAGIC efficient
 | `v`                    | Views the full layout                                                                                  |
 | `r` / `R`              | Rotates the selected object                                                                             |
 | `s`                    | Selects an object (can check connections)                                                              |
+| `Ctrl` + `p`           | edit Parameter of the selected a PCELL                                                                 |
+| `a`                    | aria selection (could be used to select a label)                                                       |
+| `:what`                | Shows what is selected in the console (label, layer aria)                                              |
 
 ## Routing Commands
 
@@ -43,6 +46,32 @@ To adjust visibility of layers for routing:
 see no *      # Disable all layers
 see locali    # Show all local interconnects
 see m1        # Show metal1 layer
+```
+
+**conecting locali to metal 1:**
+
+select aria and use the following command:
+```
+:paint viali
+```
+
+**Create a Port:**
+
+* Create a Box for the Port with `LMB` and `RMB`
+* create a label with `:label <name> <alignment>`. --> example: `label VDD w` the `w` stands for west
+*  create a Port from a label with `:port make <index>` 
+
+**Port to an other layer:**
+* Select Port with a box followed with an aria selection `a`
+* Command `:what` shows the connection of the Port
+* Command `setlabel layer Mx` sets the selected Layer to the Layer `Mx`
+
+**import own Cell:**
+
+To import a Subcell `*.mag` file, use the following command:
+
+```
+getcell <name_of_the_cell.mag>
 ```
 
 ### Routing Mode Shortcuts
@@ -122,7 +151,7 @@ make info
 6. **Perform LVS:**
    - First, create a reference SPICE file using `xschem` in the `xschem` folder. The SPICE file must be saved in:
      ```
-     xschem/simulation/inverter.spice
+     xschem/netlists/inverter.spice
      ```
    - Run LVS to extract the SPICE netlist from MAGIC and execute the `tcl` script `lvs_netgen` with `netgen`:
      ```
