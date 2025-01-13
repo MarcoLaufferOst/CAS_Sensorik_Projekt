@@ -355,7 +355,7 @@ Weiterhin wird auf das `substrate noise` eingegangen. Dieses kann durch einen `G
 
 Um ein ideales CC-Layout zu erreichen, kann der Widerstand $R$ in weitere Einheiten unterteilt werden. Diese Einheiten werden gleichmässig um ein Zentrum verteilt. Die ideale Verteilung könnte mithilfe von Algorithmen automatisiert werden [2]. Da das Layout-File textbasiert ist, wäre es möglich, ein entsprechendes Tool in Python zu entwickeln. Dies liegt jedoch ausserhalb des Projektumfangs. 
 
-Aufgrund der ungeübten Handhabung des Layout-Tools `Magic` wurde auf ein besseres Matching mit CC verzichtet. Stattdessen wurde eine `PCELL` konfiguriert, die 27 Widerstände à 20 k$\Omega$ mit einem Guard Ring erzeugt. Der Guard Ring ist oben offen (kein Top-Metal, jedoch Left, Right und Bottom Metal). Das Routing wurde auf Metal 1 (violett) durchgeführt. Die folgende Abbildung zeigt die Konfiguration der `PCELL` sowie das Layout der R2R-Widerstände. Die Abbildung unten rechts zeigt den isolierten M1-Layer. Links und rechts wird jeweils ein Widerstand als Dummy verwendet, der kurzgeschlossen ist.
+Aufgrund der ungeübten Handhabung des Layout-Tools `Magic` wurde auf ein besseres Matching mit CC verzichtet. Stattdessen wurde eine `PCELL` konfiguriert, die 27 Widerstände à 20 $k\Omega$ mit einem Guard Ring erzeugt. Der Guard Ring ist oben offen (kein Top-Metal, jedoch Left, Right und Bottom Metal). Das Routing wurde auf Metal 1 (violett) durchgeführt. Die folgende Abbildung zeigt die Konfiguration der `PCELL` sowie das Layout der R2R-Widerstände. Die Abbildung unten rechts zeigt den isolierten M1-Layer. Links und rechts wird jeweils ein Widerstand als Dummy verwendet, der kurzgeschlossen ist.
 
 ![R2R-Widerstandslayout](./img/r2r_layout.png)
 
@@ -374,7 +374,7 @@ Der DAC-Switch, das R2R-Netzwerk und der gesamte DAC können mit LVS überprüft
 ```bash
 cd xschem
 make netlist_lvs
-cd mag
+cd ./../mag
 make lvs
 ```
 Aus dem Layout können die parasitären Widerstände und Kapazitäten extrahiert werden (Parasitic Layout Extraction  siehe [read-the-docs](https://skywater-pdk.readthedocs.io/en/main/rules/rcx.html)). Dieser `parax` Schritt wurde ebenfalls ins Makefile integriert und kann mit `sim` ausgeführt werden:
@@ -394,8 +394,33 @@ Die Testbench des DACs wurde mit dem `parax`-Modell wiederholt simuliert. Es kon
 ![DAC-Parasitics-Testbench](./img/dac_parax_testbench_sim_res.png)
 
 
+## Konklusion
+
+Beim Entwurf und Design wurde vorwiegend auf Einfachheit geachtet. Unter den getesteten Bedingungen konnte in der Simulation ein DNL von $< 0.3 \text{LSB}$ erreicht werden. Mit einer Offsetkompensation (Polynomfit ersten Grades) lag auch der INL bei $< 0.3 \, \text{LSB}$. Beim Layout der Widerstände wurde darauf geachtet, dass diese möglichst dicht angeordnet und mit einem Guard-Ring geschützt werden. Die Metallleitungen wurden bei den Schaltern und Widerständen möglichst breit ausgeführt und mit mehreren Vias verbunden. Bei der parasitären Extraktion konnte keine signifikante Verschlechterung festgestellt werden.
+
+Vielerorts könnten jedoch Optimierungen vorgenommen werden: 
+- Im Design könnte mit einer Break-Before-Make-Schaltung der Querstrom des DAC-Schalters deutlich verringert werden. Dies liesse sich durch zwei Flipflops erreichen, die nacheinander getaktet werden. Häufig wird jedoch einfach die Gatterlaufzeit von zwei Invertern verwendet.  
+- Die kapazitive Last des DAC-Schalters sollte nicht direkt durch ein Logik-Gatter des digitalen Teils angesteuert werden. Stattdessen wäre eine Inverterkette mit aufsteigender Treiberleistung sinnvoll, wie sie beispielsweise im Design von Tim Edwards im IP-Block [8-bit Resistive Ladder DAC](https://github.com/RTimothyEdwards/sky130_ef_ip__rdac3v_8bit/tree/main) umgesetzt wurde.  
+- Der Referenzspannungsbereich des DACs könnte erweitert werden, wenn von der digitalen Ansteuerung mit \( 1.8 \, \text{V} \) ein Levelshift auf \( 3.3 \, \text{V} \) im Design vorgenommen würde. Auch dies wird von Edwards in seinem Design implementiert.
+
+Die folgende Abbildung zeigt das Schema des genannten Designs:
+
+![level_shifter_edwards](./img/tim_edwards_level_sift_schem.png)
+
+
+Weitere Optimierungen können aus dem Buch  *Analog Integrated Circuit Design* [1] entnommen werden. Beispielsweise wird in [1, Figure 30.6] (untere Abbildung oben links) die Segmentierung der Widerstände behandelt. Möglichkeiten zur Kompensation des Schalterwiderstands mit einem `Dummy Switch` sind in [1, Figure 29.6] (untere Abbildung unten links) beschrieben. In [1] wird die Segmentierung von Voltage-Mode-DACs nicht weiter vertieft; hierzu existieren jedoch andere Literaturquellen, wie beispielsweise [3]. Zudem werden in [1] Layout-Optimierungen mit Common-Centroid-Strukturen vorgestellt ([1, Figure 5.28(a)] und [1, Figure 5.29], oben und unten rechts).
+
+![opt_book_ref](./img/optim_book_CMOS%20_circuit_design.png)
+
+Die Verifizierung der Funktionsblöcke erfolgte mit entsprechenden Testbenches in Form von `xschem`-Schemas. Es wurden jedoch keine automatisierten Charakterisierungen mit entsprechenden Tools durchgeführt. Für ein neues Design wäre der Einsatz eines solchen Tools nach Aussage von Tim Edwards sehr empfehlenswert, da bei jeder Anpassung alle definierten Spezifikationen und Messungen über alle Bedingungen (Corner, Speisespannung, Temperatur etc.) überprüft und ein Bericht generiert wird [4]. Dies kann durch eine CI-Pipeline automatisiert werden, die bei jedem Einchecken alle Parameter prüft. Entsprechende Tools, namentlich [cace](https://github.com/efabless/cace?tab=readme-ov-file) von Tim Edwards oder [cicsim](https://github.com/wulffern/cicsim) von Carsten Wulff, stehen frei zur Verfügung.
+
+
 ### Referenzen  
 
 [1] Carusone, T. C., Johns, D., Martin, K. (2012). *Analog Integrated Circuit Design*. Vereinigtes Königreich: Wiley.  
 
 [2] V. Borisov, K. Langner, J. Scheible and B. Prautsch, "A novel approach for automatic common-centroid pattern generation," 2017 14th International Conference on Synthesis, Modeling, Analysis and Simulation Methods and Applications to Circuit Design (SMACD), Giardini Naxos, Italy, 2017, pp. 1-4, doi: 10.1109/SMACD.2017.7981584.
+
+[3] W. Xu, R. Zhang and C. Shi, "Research of segmented 8bit voltage-mode R-2R ladder DAC," 2015 IEEE 11th International Conference on ASIC (ASICON), Chengdu, China, 2015, pp. 1-4, doi: 10.1109/ASICON.2015.7517105.
+
+[4] FOSSi Foundation, „CACE Study: Open source analog and mixed-signal design flow“ (03.05.2024, 17:15–18:18).Accessed: Jan. 12, 2024. [Online video]. Available: https://www.youtube.com/watch?v=0UMb-vd4MtU
