@@ -42,6 +42,12 @@ harden:
 
 
 
+SIM_DIR := verilog/sim
+RTL_FILE := ./../rtl/r2r_dac_control.v
+
+
+cosim:
+	cd $(SIM_DIR) && ngspice vlnggen $(RTL_FILE)
 
 
 .PHONY: interactive remove_synth
