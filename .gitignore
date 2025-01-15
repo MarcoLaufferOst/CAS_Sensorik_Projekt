@@ -12,3 +12,5 @@ test/gate_level_netlist.v
 mag/*.spice
 mag/*.report
 xschem/simulation/
+verilog/sim/*
+!verilog/sim/*.so
