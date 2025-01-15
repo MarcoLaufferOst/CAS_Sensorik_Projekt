@@ -63,3 +63,4 @@ remove_synth:
 update_files:
 	cp openlane/$(PROJECT_NAME)/runs/$(PROJECT_NAME)/results/final/gds/$(PROJECT_NAME).gds gds
 	cp openlane/$(PROJECT_NAME)/runs/$(PROJECT_NAME)/results/final/verilog/gl/$(PROJECT_NAME).v verilog/gl/
+	cp openlane/$(PROJECT_NAME)/runs/$(PROJECT_NAME)/results/final/mag/$(PROJECT_NAME).mag mag
