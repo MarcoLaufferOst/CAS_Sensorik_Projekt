@@ -1,0 +1,27 @@
+
+* verilog Model verilog/rtl/r2r_dac_control.v
+*module  r2r_dac_control(
+*    input wire clk,              // Clock input
+*    input wire reset,            // Reset input
+*    input wire comp,             // Comparator signal input
+*    output reg [7:0] data_out    // 8-bit converted output
+*);
+
+.subckt r2r_dac_control clk reset comp b7 b6 b5 b4 b3 b2 b1 b0
+
+ar2r_ctrl [clk
++ reset
++ comp
++ ]
++ [b7
++ b6
++ b5
++ b4
++ b3
++ b2
++ b1
++ b0
++ ] null r2r_ctrl
+
+.model r2r_ctrl d_cosim simulation="./../../verilog/sim/r2r_dac_control.so" delay=10p
+.ends r2r_dac_control
