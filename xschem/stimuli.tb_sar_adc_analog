@@ -1,0 +1,67 @@
+unit n
+voltage v_hi
+slope 5
+format hspice_simple
+
+beginfile stimuli_tb_sar_adc_analog.cir
+
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 0
+set s_h 0
+
+s 2
+set s_h 3.3
+s 20
+
+s 30
+set s_h 0
+set v_b0 1
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 30
+set v_b0 0
+set v_b1 0
+set v_b2 0
+set v_b3 0
+set v_b4 0
+set v_b5 0
+set v_b6 0
+set v_b7 1
+
+s 30
+set v_b0 1
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 30
+set v_b0 0
+set v_b1 1
+set v_b2 1
+set v_b3 1
+set v_b4 1
+set v_b5 1
+set v_b6 1
+set v_b7 0
+
+s 30
+
+
+
+endfile
