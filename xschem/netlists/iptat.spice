@@ -1,0 +1,32 @@
+** sch_path: /home/ttuser/iptat.sch
+.subckt iptat vdda iptat vssa
+*.PININFO vdda:I vssa:I iptat:O
+XM1[1] vbpmos vbpmos vdda vdda sky130_fd_pr__pfet_g5v0d10v5 L=3 W=18 nf=2 m=1
+XM1[2] vbpmos vbpmos vdda vdda sky130_fd_pr__pfet_g5v0d10v5 L=3 W=18 nf=2 m=1
+XM2[1] vbnpn vbpmos vdda vdda sky130_fd_pr__pfet_g5v0d10v5 L=3 W=18 nf=2 m=1
+XM2[2] vbnpn vbpmos vdda vdda sky130_fd_pr__pfet_g5v0d10v5 L=3 W=18 nf=2 m=1
+XM3[1] vbnmos vbpmos vdda vdda sky130_fd_pr__pfet_g5v0d10v5 L=3 W=18 nf=2 m=1
+XM3[2] vbnmos vbpmos vdda vdda sky130_fd_pr__pfet_g5v0d10v5 L=3 W=18 nf=2 m=1
+XM4[1] iptat vbnmos vssa vssa sky130_fd_pr__nfet_g5v0d10v5 L=3 W=6 nf=2 m=1
+XM4[2] iptat vbnmos vssa vssa sky130_fd_pr__nfet_g5v0d10v5 L=3 W=6 nf=2 m=1
+XM5[1] vbnmos vbnmos vssa vssa sky130_fd_pr__nfet_g5v0d10v5 L=3 W=6 nf=2 m=1
+XM5[2] vbnmos vbnmos vssa vssa sky130_fd_pr__nfet_g5v0d10v5 L=3 W=6 nf=2 m=1
+XMDY1[1] vdda vbpmos vdda vdda sky130_fd_pr__pfet_g5v0d10v5 L=3 W=2 nf=2 m=1
+XMDY1[2] vdda vbpmos vdda vdda sky130_fd_pr__pfet_g5v0d10v5 L=3 W=2 nf=2 m=1
+XMDY2[1] vssa vbnmos vssa vssa sky130_fd_pr__nfet_g5v0d10v5 L=3 W=2 nf=2 m=1
+XMDY2[2] vssa vbnmos vssa vssa sky130_fd_pr__nfet_g5v0d10v5 L=3 W=2 nf=2 m=1
+XR1 vssa vr vssa sky130_fd_pr__res_high_po_1p41 L=10.3 mult=4 m=4
+XM6 vinv vbnpn vssa vssa sky130_fd_pr__nfet_g5v0d10v5 L=1 W=20 nf=2 m=1
+XM7 vbpmos vinv vssa vssa sky130_fd_pr__nfet_g5v0d10v5 L=1 W=5 nf=1 m=1
+XM8 vinv vbnpn vdda vdda sky130_fd_pr__pfet_g5v0d10v5 L=10 W=1 nf=1 m=1
+XM9 vbnpn vbnpn vssa vssa sky130_fd_pr__nfet_g5v0d10v5 L=1 W=120 nf=8 m=1
+XM10[1] vbpmos vbnpn vr vssa sky130_fd_pr__nfet_g5v0d10v5 L=1 W=120 nf=8 m=1
+XM10[2] vbpmos vbnpn vr vssa sky130_fd_pr__nfet_g5v0d10v5 L=1 W=120 nf=8 m=1
+XM10[3] vbpmos vbnpn vr vssa sky130_fd_pr__nfet_g5v0d10v5 L=1 W=120 nf=8 m=1
+XM10[4] vbpmos vbnpn vr vssa sky130_fd_pr__nfet_g5v0d10v5 L=1 W=120 nf=8 m=1
+XM10[5] vbpmos vbnpn vr vssa sky130_fd_pr__nfet_g5v0d10v5 L=1 W=120 nf=8 m=1
+XM10[6] vbpmos vbnpn vr vssa sky130_fd_pr__nfet_g5v0d10v5 L=1 W=120 nf=8 m=1
+XMDY3[1] vssa vbnpn vssa vssa sky130_fd_pr__nfet_g5v0d10v5 L=1 W=8 nf=8 m=1
+XMDY3[2] vssa vbnpn vssa vssa sky130_fd_pr__nfet_g5v0d10v5 L=1 W=8 nf=8 m=1
+.ends
+.end
