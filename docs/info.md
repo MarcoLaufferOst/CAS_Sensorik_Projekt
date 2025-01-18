@@ -42,13 +42,13 @@ The following points are not objectives of the project:
 |------------------|--------|
 | Project setup is complete and passes all tests | ✅ |
 | The entire process (Schematic - Simulation - Layout - LVS - GDS) has been implemented with a simple design (inverter) | ✅ |
-| Simulations can be executed using Makefiles, and tools are automated to enable work on more complex projects | ❌ |
-| Specifications for the comparator are created | ❌ |
-| Schematic for a comparator is completed | ❌ |
-| All testbenches for the comparator are created, and the dimensions meet the requirements | ❌ |
-| Requirements/specifications for the DAC are created | ❌ |
-| Schematic for the DAC is completed | ❌ |
-| Required testbenches for the DAC are created, and the design meets necessary requirements | ❌ |
+| Simulations can be executed using Makefiles, and tools are automated to enable work on more complex projects | ✅ |
+| Specifications for the comparator are created | ✅ |
+| Schematic for a comparator is completed | ✅ |
+| All testbenches for the comparator are created, and the dimensions meet the requirements | ✅ |
+| Requirements/specifications for the DAC are created | ✅ |
+| Schematic for the DAC is completed | ✅ |
+| Required testbenches for the DAC are created, and the design meets necessary requirements | ✅ |
 
 
 
