@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 adc_bits = 8
 adc_values = 2**adc_bits
-adc_ref = 2.0
+adc_ref = 2
 adc_lsb = adc_ref / adc_values
 
 print(f"ADC Parameter Bits: {adc_bits} Values: {adc_values} LSB: {adc_lsb}V")
@@ -26,12 +26,25 @@ DNL = delta_between_values / adc_lsb - 1
 # the values are offest comp
 
 v_ideal = np.linspace(0.0,adc_ref , adc_values)
+v_ideal = np.linspace(0.0,(adc_ref-adc_lsb) , adc_values)
+# v_ideal = np.linspace(0.0,voltages[-1] , adc_values)
 
+#simple offset compensation -> calculate depending on the fist vaule wich should be 0
 offset = voltages[0] - 0.0
+
+#better offset compensation is to create a linear regression with a ployfit (least squares) 1 deg
+dummy_x = np.arange(len(voltages))
+
+# std form of linear function x = ax+b
+a,b = np.polyfit(dummy_x,voltages,1)
+offset = b
+
 voltages_no_offset = voltages -offset
 
 error = voltages_no_offset - v_ideal
 INL = error / adc_lsb
+
+print(f"DAC Values: Slope: {a}, Offset: {offset}")
 
 # print("*********** DNL *************")
 # print(DNL)
@@ -46,7 +59,7 @@ plt.plot(DNL, marker='o', linestyle='-', color='b', markersize=3)
 plt.title('DNL (Differential Nonlinearity)')
 plt.xlabel('Code')
 plt.ylabel('DNL [LSB]')
-plt.ylim(-2, 2)
+# plt.ylim(-2, 2)
 plt.grid(True)
 
 # INL Plot
