@@ -1,0 +1,148 @@
+************************************** 
+* SPICE STIMULI FILE 
+* generated from 
+************************************** 
+
+Vv_b0 v_b0 0 PWL 5n 0 10n 0 11n v_hi 15n v_hi 16n 0 20n 
++0 21n v_hi 25n v_hi 26n 0 30n 0 31n v_hi 35n v_hi 36n 0 
++40n 0 41n v_hi 45n v_hi 46n 0 50n 0 51n v_hi 55n v_hi 56n 
++0 60n 0 61n v_hi 65n v_hi 66n 0 70n 0 71n v_hi 75n v_hi 
++76n 0 80n 0 81n v_hi 85n v_hi 86n 0 90n 0 91n v_hi 95n 
++v_hi 96n 0 100n 0 101n v_hi 105n v_hi 106n 0 110n 0 111n v_hi 
++115n v_hi 116n 0 120n 0 121n v_hi 125n v_hi 126n 0 130n 0 131n 
++v_hi 135n v_hi 136n 0 140n 0 141n v_hi 145n v_hi 146n 0 150n 0 
++151n v_hi 155n v_hi 156n 0 160n 0 161n v_hi 165n v_hi 166n 0 170n 
++0 171n v_hi 175n v_hi 176n 0 180n 0 181n v_hi 185n v_hi 186n 0 
++190n 0 191n v_hi 195n v_hi 196n 0 200n 0 201n v_hi 205n v_hi 206n 
++0 210n 0 211n v_hi 215n v_hi 216n 0 220n 0 221n v_hi 225n v_hi 
++226n 0 230n 0 231n v_hi 235n v_hi 236n 0 240n 0 241n v_hi 245n 
++v_hi 246n 0 250n 0 251n v_hi 255n v_hi 256n 0 260n 0 261n v_hi 
++265n v_hi 266n 0 270n 0 271n v_hi 275n v_hi 276n 0 280n 0 281n 
++v_hi 285n v_hi 286n 0 290n 0 291n v_hi 295n v_hi 296n 0 300n 0 
++301n v_hi 305n v_hi 306n 0 310n 0 311n v_hi 315n v_hi 316n 0 320n 
++0 321n v_hi 325n v_hi 326n 0 330n 0 331n v_hi 335n v_hi 336n 0 
++340n 0 341n v_hi 345n v_hi 346n 0 350n 0 351n v_hi 355n v_hi 356n 
++0 360n 0 361n v_hi 365n v_hi 366n 0 370n 0 371n v_hi 375n v_hi 
++376n 0 380n 0 381n v_hi 385n v_hi 386n 0 390n 0 391n v_hi 395n 
++v_hi 396n 0 400n 0 401n v_hi 405n v_hi 406n 0 410n 0 411n v_hi 
++415n v_hi 416n 0 420n 0 421n v_hi 425n v_hi 426n 0 430n 0 431n 
++v_hi 435n v_hi 436n 0 440n 0 441n v_hi 445n v_hi 446n 0 450n 0 
++451n v_hi 455n v_hi 456n 0 460n 0 461n v_hi 465n v_hi 466n 0 470n 
++0 471n v_hi 475n v_hi 476n 0 480n 0 481n v_hi 485n v_hi 486n 0 
++490n 0 491n v_hi 495n v_hi 496n 0 500n 0 501n v_hi 505n v_hi 506n 
++0 510n 0 511n v_hi 515n v_hi 516n 0 520n 0 521n v_hi 525n v_hi 
++526n 0 530n 0 531n v_hi 535n v_hi 536n 0 540n 0 541n v_hi 545n 
++v_hi 546n 0 550n 0 551n v_hi 555n v_hi 556n 0 560n 0 561n v_hi 
++565n v_hi 566n 0 570n 0 571n v_hi 575n v_hi 576n 0 580n 0 581n 
++v_hi 585n v_hi 586n 0 590n 0 591n v_hi 595n v_hi 596n 0 600n 0 
++601n v_hi 605n v_hi 606n 0 610n 0 611n v_hi 615n v_hi 616n 0 620n 
++0 621n v_hi 625n v_hi 626n 0 630n 0 631n v_hi 635n v_hi 636n 0 
++640n 0 641n v_hi 645n v_hi 646n 0 650n 0 651n v_hi 655n v_hi 656n 
++0 660n 0 661n v_hi 665n v_hi 666n 0 670n 0 671n v_hi 675n v_hi 
++676n 0 680n 0 681n v_hi 685n v_hi 686n 0 690n 0 691n v_hi 695n 
++v_hi 696n 0 700n 0 701n v_hi 705n v_hi 706n 0 710n 0 711n v_hi 
++715n v_hi 716n 0 720n 0 721n v_hi 725n v_hi 726n 0 730n 0 731n 
++v_hi 735n v_hi 736n 0 740n 0 741n v_hi 745n v_hi 746n 0 750n 0 
++751n v_hi 755n v_hi 756n 0 760n 0 761n v_hi 765n v_hi 766n 0 770n 
++0 771n v_hi 775n v_hi 776n 0 780n 0 781n v_hi 785n v_hi 786n 0 
++790n 0 791n v_hi 795n v_hi 796n 0 800n 0 801n v_hi 805n v_hi 806n 
++0 810n 0 811n v_hi 815n v_hi 816n 0 820n 0 821n v_hi 825n v_hi 
++826n 0 830n 0 831n v_hi 835n v_hi 836n 0 840n 0 841n v_hi 845n 
++v_hi 846n 0 850n 0 851n v_hi 855n v_hi 856n 0 860n 0 861n v_hi 
++865n v_hi 866n 0 870n 0 871n v_hi 875n v_hi 876n 0 880n 0 881n 
++v_hi 885n v_hi 886n 0 890n 0 891n v_hi 895n v_hi 896n 0 900n 0 
++901n v_hi 905n v_hi 906n 0 910n 0 911n v_hi 915n v_hi 916n 0 920n 
++0 921n v_hi 925n v_hi 926n 0 930n 0 931n v_hi 935n v_hi 936n 0 
++940n 0 941n v_hi 945n v_hi 946n 0 950n 0 951n v_hi 955n v_hi 956n 
++0 960n 0 961n v_hi 965n v_hi 966n 0 970n 0 971n v_hi 975n v_hi 
++976n 0 980n 0 981n v_hi 985n v_hi 986n 0 990n 0 991n v_hi 995n 
++v_hi 996n 0 1000n 0 1001n v_hi 1005n v_hi 1006n 0 1010n 0 1011n v_hi 
++1015n v_hi 1016n 0 1020n 0 1021n v_hi 1025n v_hi 1026n 0 1030n 0 1031n 
++v_hi 1035n v_hi 1036n 0 1040n 0 1041n v_hi 1045n v_hi 1046n 0 1050n 0 
++1051n v_hi 1055n v_hi 1056n 0 1060n 0 1061n v_hi 1065n v_hi 1066n 0 1070n 
++0 1071n v_hi 1075n v_hi 1076n 0 1080n 0 1081n v_hi 1085n v_hi 1086n 0 
++1090n 0 1091n v_hi 1095n v_hi 1096n 0 1100n 0 1101n v_hi 1105n v_hi 1106n 
++0 1110n 0 1111n v_hi 1115n v_hi 1116n 0 1120n 0 1121n v_hi 1125n v_hi 
++1126n 0 1130n 0 1131n v_hi 1135n v_hi 1136n 0 1140n 0 1141n v_hi 1145n 
++v_hi 1146n 0 1150n 0 1151n v_hi 1155n v_hi 1156n 0 1160n 0 1161n v_hi 
++1165n v_hi 1166n 0 1170n 0 1171n v_hi 1175n v_hi 1176n 0 1180n 0 1181n 
++v_hi 1185n v_hi 1186n 0 1190n 0 1191n v_hi 1195n v_hi 1196n 0 1200n 0 
++1201n v_hi 1205n v_hi 1206n 0 1210n 0 1211n v_hi 1215n v_hi 1216n 0 1220n 
++0 1221n v_hi 1225n v_hi 1226n 0 1230n 0 1231n v_hi 1235n v_hi 1236n 0 
++1240n 0 1241n v_hi 1245n v_hi 1246n 0 1250n 0 1251n v_hi 1255n v_hi 1256n 
++0 1260n 0 1261n v_hi 1265n v_hi 1266n 0 1270n 0 1271n v_hi 1275n v_hi 
++1276n 0 1280n 0 1281n v_hi 
+Vv_b1 v_b1 0 PWL 5n 0 15n 0 16n v_hi 25n v_hi 26n 0 35n 
++0 36n v_hi 45n v_hi 46n 0 55n 0 56n v_hi 65n v_hi 66n 0 
++75n 0 76n v_hi 85n v_hi 86n 0 95n 0 96n v_hi 105n v_hi 106n 
++0 115n 0 116n v_hi 125n v_hi 126n 0 135n 0 136n v_hi 145n v_hi 
++146n 0 155n 0 156n v_hi 165n v_hi 166n 0 175n 0 176n v_hi 185n 
++v_hi 186n 0 195n 0 196n v_hi 205n v_hi 206n 0 215n 0 216n v_hi 
++225n v_hi 226n 0 235n 0 236n v_hi 245n v_hi 246n 0 255n 0 256n 
++v_hi 265n v_hi 266n 0 275n 0 276n v_hi 285n v_hi 286n 0 295n 0 
++296n v_hi 305n v_hi 306n 0 315n 0 316n v_hi 325n v_hi 326n 0 335n 
++0 336n v_hi 345n v_hi 346n 0 355n 0 356n v_hi 365n v_hi 366n 0 
++375n 0 376n v_hi 385n v_hi 386n 0 395n 0 396n v_hi 405n v_hi 406n 
++0 415n 0 416n v_hi 425n v_hi 426n 0 435n 0 436n v_hi 445n v_hi 
++446n 0 455n 0 456n v_hi 465n v_hi 466n 0 475n 0 476n v_hi 485n 
++v_hi 486n 0 495n 0 496n v_hi 505n v_hi 506n 0 515n 0 516n v_hi 
++525n v_hi 526n 0 535n 0 536n v_hi 545n v_hi 546n 0 555n 0 556n 
++v_hi 565n v_hi 566n 0 575n 0 576n v_hi 585n v_hi 586n 0 595n 0 
++596n v_hi 605n v_hi 606n 0 615n 0 616n v_hi 625n v_hi 626n 0 635n 
++0 636n v_hi 645n v_hi 646n 0 655n 0 656n v_hi 665n v_hi 666n 0 
++675n 0 676n v_hi 685n v_hi 686n 0 695n 0 696n v_hi 705n v_hi 706n 
++0 715n 0 716n v_hi 725n v_hi 726n 0 735n 0 736n v_hi 745n v_hi 
++746n 0 755n 0 756n v_hi 765n v_hi 766n 0 775n 0 776n v_hi 785n 
++v_hi 786n 0 795n 0 796n v_hi 805n v_hi 806n 0 815n 0 816n v_hi 
++825n v_hi 826n 0 835n 0 836n v_hi 845n v_hi 846n 0 855n 0 856n 
++v_hi 865n v_hi 866n 0 875n 0 876n v_hi 885n v_hi 886n 0 895n 0 
++896n v_hi 905n v_hi 906n 0 915n 0 916n v_hi 925n v_hi 926n 0 935n 
++0 936n v_hi 945n v_hi 946n 0 955n 0 956n v_hi 965n v_hi 966n 0 
++975n 0 976n v_hi 985n v_hi 986n 0 995n 0 996n v_hi 1005n v_hi 1006n 
++0 1015n 0 1016n v_hi 1025n v_hi 1026n 0 1035n 0 1036n v_hi 1045n v_hi 
++1046n 0 1055n 0 1056n v_hi 1065n v_hi 1066n 0 1075n 0 1076n v_hi 1085n 
++v_hi 1086n 0 1095n 0 1096n v_hi 1105n v_hi 1106n 0 1115n 0 1116n v_hi 
++1125n v_hi 1126n 0 1135n 0 1136n v_hi 1145n v_hi 1146n 0 1155n 0 1156n 
++v_hi 1165n v_hi 1166n 0 1175n 0 1176n v_hi 1185n v_hi 1186n 0 1195n 0 
++1196n v_hi 1205n v_hi 1206n 0 1215n 0 1216n v_hi 1225n v_hi 1226n 0 1235n 
++0 1236n v_hi 1245n v_hi 1246n 0 1255n 0 1256n v_hi 1265n v_hi 1266n 0 
++1275n 0 1276n v_hi 
+Vv_b2 v_b2 0 PWL 5n 0 25n 0 26n v_hi 45n v_hi 46n 0 65n 
++0 66n v_hi 85n v_hi 86n 0 105n 0 106n v_hi 125n v_hi 126n 0 
++145n 0 146n v_hi 165n v_hi 166n 0 185n 0 186n v_hi 205n v_hi 206n 
++0 225n 0 226n v_hi 245n v_hi 246n 0 265n 0 266n v_hi 285n v_hi 
++286n 0 305n 0 306n v_hi 325n v_hi 326n 0 345n 0 346n v_hi 365n 
++v_hi 366n 0 385n 0 386n v_hi 405n v_hi 406n 0 425n 0 426n v_hi 
++445n v_hi 446n 0 465n 0 466n v_hi 485n v_hi 486n 0 505n 0 506n 
++v_hi 525n v_hi 526n 0 545n 0 546n v_hi 565n v_hi 566n 0 585n 0 
++586n v_hi 605n v_hi 606n 0 625n 0 626n v_hi 645n v_hi 646n 0 665n 
++0 666n v_hi 685n v_hi 686n 0 705n 0 706n v_hi 725n v_hi 726n 0 
++745n 0 746n v_hi 765n v_hi 766n 0 785n 0 786n v_hi 805n v_hi 806n 
++0 825n 0 826n v_hi 845n v_hi 846n 0 865n 0 866n v_hi 885n v_hi 
++886n 0 905n 0 906n v_hi 925n v_hi 926n 0 945n 0 946n v_hi 965n 
++v_hi 966n 0 985n 0 986n v_hi 1005n v_hi 1006n 0 1025n 0 1026n v_hi 
++1045n v_hi 1046n 0 1065n 0 1066n v_hi 1085n v_hi 1086n 0 1105n 0 1106n 
++v_hi 1125n v_hi 1126n 0 1145n 0 1146n v_hi 1165n v_hi 1166n 0 1185n 0 
++1186n v_hi 1205n v_hi 1206n 0 1225n 0 1226n v_hi 1245n v_hi 1246n 0 1265n 
++0 1266n v_hi 
+Vv_b3 v_b3 0 PWL 5n 0 45n 0 46n v_hi 85n v_hi 86n 0 125n 
++0 126n v_hi 165n v_hi 166n 0 205n 0 206n v_hi 245n v_hi 246n 0 
++285n 0 286n v_hi 325n v_hi 326n 0 365n 0 366n v_hi 405n v_hi 406n 
++0 445n 0 446n v_hi 485n v_hi 486n 0 525n 0 526n v_hi 565n v_hi 
++566n 0 605n 0 606n v_hi 645n v_hi 646n 0 685n 0 686n v_hi 725n 
++v_hi 726n 0 765n 0 766n v_hi 805n v_hi 806n 0 845n 0 846n v_hi 
++885n v_hi 886n 0 925n 0 926n v_hi 965n v_hi 966n 0 1005n 0 1006n 
++v_hi 1045n v_hi 1046n 0 1085n 0 1086n v_hi 1125n v_hi 1126n 0 1165n 0 
++1166n v_hi 1205n v_hi 1206n 0 1245n 0 1246n v_hi 
+Vv_b4 v_b4 0 PWL 5n 0 85n 0 86n v_hi 165n v_hi 166n 0 245n 
++0 246n v_hi 325n v_hi 326n 0 405n 0 406n v_hi 485n v_hi 486n 0 
++565n 0 566n v_hi 645n v_hi 646n 0 725n 0 726n v_hi 805n v_hi 806n 
++0 885n 0 886n v_hi 965n v_hi 966n 0 1045n 0 1046n v_hi 1125n v_hi 
++1126n 0 1205n 0 1206n v_hi 
+Vv_b5 v_b5 0 PWL 5n 0 165n 0 166n v_hi 325n v_hi 326n 0 485n 
++0 486n v_hi 645n v_hi 646n 0 805n 0 806n v_hi 965n v_hi 966n 0 
++1125n 0 1126n v_hi 
+Vv_b6 v_b6 0 PWL 5n 0 325n 0 326n v_hi 645n v_hi 646n 0 965n 
++0 966n v_hi 
+Vv_b7 v_b7 0 PWL 5n 0 645n 0 646n v_hi 
+

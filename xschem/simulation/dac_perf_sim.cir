@@ -1,0 +1,102 @@
+
+* spice simulation
+* ngspice -i simulation/dac_perf_sim.cir -a
+
+
+.control
+let tm = 10n
+let index = 0
+let dac_values = vector(256)
+let sim_loops = 2
+let plotnr = 1
+let x_ax = vector(256)
+
+load simulation/tb_dac_performance.raw
+
+
+repeat $&sim_loops
+
+    * set the tran sim run
+    setplot tran{$&plotnr}
+    repeat 256
+        
+        meas tran v_dac find v(dac_out) at=$&tm
+
+        let dac_values[index] = v_dac
+        let x_ax[index] = index
+        let tm = tm + 5n
+        let index = index + 1
+
+    end
+* echo "Run passed Values:"
+* print dac_values
+
+wrdata dac_data.txt dac_values vs x_ax
+* set appendwrite
+
+let plotnr = plotnr + 1
+let index = 0
+let tm = 10n
+
+end
+
+
+quit
+* setplot tran2
+* meas tran v_tt find v(dac_out) at=5n
+
+.endc
+
+
+* .option chgtol=4e-16
+* ** vary Temp **
+* .param TEMPGAUSS = agauss(30, 40, 1)
+* .option temp = 'TEMPGAUSS'
+
+* ** vary VCC **
+* .param VctrlGAUSS = agauss(1.8, 0.05, 1)
+* .param Vctrl = 'VctrlGAUSS'
+* *.param Vctrl = 1.8
+
+* *.param DELTA = 0.002
+
+* .control
+*    setseed 3
+*    set wr_vecnames
+*    let loops = 100
+*    let index = 0
+*    let index2 = 0
+*    let x_ax = vector(loops)
+*    let v_high = vector(loops)
+*    let v_low = vector(loops)
+*    reset
+   
+*    repeat $&loops 
+*      save all
+*      op 
+*      let v_low[index] = V(DrvL)
+     
+*      write tb_dac_switch_dc_switching.raw
+*      set appendwrite
+*      reset
+*      x_ax[index] = index
+*      let index = index + 1
+     
+*    end
+
+*    repeat $&loops
+*       alterparam Vctrl = 0
+*       reset
+*       save all
+*       op 
+*       let v_high[index2] = V(DrvH)
+*       write tb_dac_switch_dc_switching.raw
+*       let index2 = index2 + 1
+*    end
+   
+*    plot v_high vs x_ax
+*    plot v_low vs x_ax
+*    wrdata tb_dac_switch_dc_switching_tbl.txt v_high v_low vs x_ax
+* .endc
+
+

@@ -1,0 +1,32 @@
+
+* spice simulation
+* ngspice -i simulation/dac_perf_sim.cir -a
+
+
+.control
+
+let index = 1
+let loops = 256
+load simulation/tb_sar_adc_perf.raw
+
+reset
+
+
+repeat $&loops 
+    setplot tran{$&index}
+
+    meas tran b0m find v(v_b0) at=410n
+    meas tran b1m find v(v_b1) at=410n
+    meas tran b2m find v(v_b2) at=410n
+    meas tran b3m find v(v_b3) at=410n
+    meas tran b4m find v(v_b4) at=410n
+    meas tran b5m find v(v_b5) at=410n
+    meas tran b6m find v(v_b6) at=410n
+    meas tran b7m find v(v_b7) at=410n
+    meas tran v_input find v(v_in) at=410n
+    print v_input b0m b1m b2m b3m b4m b5m b6m b7m >> dac_ctrl_out_voltage.txt
+    let index = index + 1
+    * reset   
+end
+* quit
+.endc
