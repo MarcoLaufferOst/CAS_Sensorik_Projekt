@@ -5,7 +5,7 @@ K {}
 V {}
 S {}
 E {}
-B 2 30 -390 590 -270 {flags=graph
+B 2 30 -370 590 -250 {flags=graph
 
 
 ypos1=0
@@ -21,7 +21,7 @@ xlabmag=1.0
 ylabmag=1.0
 
 
-dataset=-1
+dataset=106
 unitx=1
 logx=0
 logy=0
@@ -36,45 +36,11 @@ sim_type=tran
 sweep=v(in)
 color=4
 node="comperator;out"}
-B 2 30 -520 590 -390 {flags=graph
+B 2 30 -540 590 -370 {flags=graph
 
 
-ypos1=0
-ypos2=2
-divy=5
-
-unity=1
-
-
-divx=5
-subdivx=1
-xlabmag=1.0
-ylabmag=1.0
-
-
-dataset=-1
-unitx=1
-logx=0
-logy=0
-
-
-
-x1=0
-x2=4.5e-07
-y2=1.2058957
-y1=1.1536111
-sim_type=tran
-sweep=v(in)
-
-
-color=7
-node=v_sh
-subdivy=1}
-B 2 30 -690 590 -520 {flags=graph
-
-
-ypos1=0.018977636
-ypos2=0.40687778
+ypos1=0.20364346
+ypos2=1.2549689
 divy=5
 subdivy=1
 unity=1
@@ -86,7 +52,7 @@ xlabmag=1.0
 ylabmag=1.0
 
 
-dataset=-1
+dataset=106
 unitx=1
 logx=0
 logy=0
@@ -103,15 +69,14 @@ sweep=v(in)
 
 
 color="4 5 6"
-node="code;v_b7,v_b6,v_b5,v_b4,v_b3,v_b2,v_b1,v_b0
-
-s_h
-reset"
+node="s_h
+reset
+clk"
 digital=1
 x2=4.5e-07
 x1=0
 hilight_wave=-1
-y2=1}
+y2=3}
 B 2 30 -990 590 -690 {flags=graph
 
 
@@ -128,7 +93,7 @@ xlabmag=1.0
 ylabmag=1.0
 
 
-dataset=-1
+dataset=106
 unitx=1
 logx=0
 logy=0
@@ -138,7 +103,7 @@ logy=0
 x1=0
 x2=4.5e-07
 y2=2
-y1=-0.00079
+y1=0.81
 sim_type=tran
 sweep=v(in)
 
@@ -147,6 +112,79 @@ sweep=v(in)
 color="4 5"
 node="v_dac
 v_sh"}
+B 2 30 -1120 590 -990 {flags=graph
+
+
+ypos1=0
+ypos2=2
+divy=5
+
+unity=1
+
+
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+
+
+dataset=106
+unitx=1
+logx=0
+logy=0
+
+
+
+x1=0
+x2=4.5e-07
+y2=1.2
+y1=1.1
+sim_type=tran
+sweep=v(in)
+
+
+color=4
+node=v_in
+subdivy=1}
+B 2 30 -690 590 -550 {flags=graph
+
+
+ypos1=0.048416175
+ypos2=0.22879915
+divy=5
+subdivy=1
+unity=1
+
+
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+
+
+dataset=106
+unitx=1
+logx=0
+logy=0
+
+
+
+
+
+
+
+sim_type=tran
+sweep=v(in)
+
+
+
+color=4
+node="code;v_b7,v_b6,v_b5,v_b4,v_b3,v_b2,v_b1,v_b0"
+digital=1
+x2=4.5e-07
+x1=0
+hilight_wave=-1
+y2=0}
 N 710 -140 710 -120 {
 lab=GND}
 N 710 -240 710 -200 {
@@ -213,9 +251,9 @@ C {devices/title.sym} 160 -30 0 0 {name=l1 author="Marco Lauffer"}
 C {sky130_fd_pr/corner.sym} 190 -210 0 0 {name=CORNER only_toplevel=true corner=tt}
 C {devices/launcher.sym} 530 -120 0 0 {name=h5
 descr="load waves" 
-tclcommand="xschem raw_read $netlist_dir/tb_sar_adc.raw tran"
+tclcommand="xschem raw_read $netlist_dir/tb_sar_adc_perf.raw tran"
 }
-C {devices/vsource.sym} 710 -170 0 0 {name=Vin value=1.171875
+C {devices/vsource.sym} 710 -170 0 0 {name=Vin value=1
 spice_ignore=false}
 C {devices/gnd.sym} 710 -120 0 0 {name=l3 lab=GND}
 C {devices/lab_pin.sym} 710 -240 0 0 {name=p7 lab=V_in}
@@ -278,15 +316,28 @@ VRESET reset 0 dc \{AVDD\} pwl 0 \{AVDD\} \{PW_CLK*4\} \{AVDD\} \{PW_CLK*2 + 1n\
 set num_threads=8
 unset askquit
 
+
+
 *- Override the default digital output bridge.
 pre_set auto_bridge_d_out =
      + ( \\".model auto_dac dac_bridge(out_low = 0.0 out_high = 1.8)\\"
      +   \\"auto_bridge%d [ %s ] [ %s ] auto_dac\\" )
-save all
-tran 1n 450n
-write tb_sar_adc.raw
-reset
 
+
+let vvin = 2    ; input voltage
+let index = 0                     ; loop index in plot 'const'
+let loops = 256                     ; number of loops, vector in plot 'const'
+let lsb = 0.0078125
+repeat $&loops                    ; loop start
+  save all
+  alter Vin $&vvin                ; alter the voltage Vcc
+  tran 1n 450n
+  write tb_sar_adc_perf.raw
+  set appendwrite
+  let vvin = vvin - lsb
+  let index = index + 1
+  reset
+end
 
 .endc
 "}
