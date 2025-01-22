@@ -1,6 +1,6 @@
 magic
 tech sky130A
-timestamp 1737521478
+timestamp 1734352414
 << metal4 >>
 rect 1503 22476 1533 22576
 rect 1779 22476 1809 22576
@@ -56,26 +56,6 @@ rect 7821 0 7911 100
 rect 9753 0 9843 100
 rect 11685 0 11775 100
 rect 13617 0 13707 100
-use comparator  comparator_0
-timestamp 1737521478
-transform 1 0 5270 0 1 3280
-box -1270 220 5210 4025
-use iptat  iptat_0
-timestamp 1737189919
-transform 1 0 1535 0 1 830
-box 465 -330 11890 2540
-use r2r_dac  r2r_dac_0
-timestamp 1736177760
-transform 1 0 11101 0 1 4902
-box -601 -1402 2678 3003
-use r2r_dac_control  r2r_dac_control_0
-timestamp 1736976312
-transform 1 0 3243 0 1 8000
-box 257 0 7760 8000
-use sample_hold  sample_hold_0
-timestamp 1737521478
-transform 0 1 2485 -1 0 8305
-box 600 -485 4805 1435
 << labels >>
 flabel metal4 s 12819 22476 12849 22576 0 FreeSans 240 90 0 0 clk
 port 0 nsew signal input
